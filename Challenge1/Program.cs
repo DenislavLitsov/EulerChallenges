@@ -16,7 +16,7 @@
                 }
             }
 
-            Console.WriteLine(foundNumbers.TotalSum());
+            Console.WriteLine(foundNumbers.Sum());
         }
     }
 }
