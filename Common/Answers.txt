@@ -7,3 +7,4 @@ Challenge 6: 25164150
 Challenge 7: 104743
 Challenge 8: 23514624000
 Challenge 9: 31875000
+Challenge 10: 142913828922
