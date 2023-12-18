@@ -22,7 +22,7 @@ namespace ChallengeExecutor.Challenges
 
             this.Answer = res;
 
-            Console.WriteLine($"Answer: {this.Answer.ToString()}. Solved for: {stopwatch.ElapsedMilliseconds}ms");
+            Console.WriteLine($"Challenge: {this.GetName()}, Answer: {this.Answer.ToString()}. Solved for: {stopwatch.ElapsedMilliseconds}ms");
         }
 
         protected long GetTotalElapsedMiliseconds()
