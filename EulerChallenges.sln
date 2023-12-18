@@ -15,23 +15,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge4", "Challenge4\Ch
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge5", "Challenge5\Challenge5.csproj", "{C01CB36A-DD98-4FE7-85D9-5B2A063AFD4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge6", "Challenge6\Challenge6.csproj", "{9E6B4377-60EF-4ABE-A162-EC23D0A4354A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge6", "Challenge6\Challenge6.csproj", "{9E6B4377-60EF-4ABE-A162-EC23D0A4354A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge7", "Challenge7\Challenge7.csproj", "{788A8F16-A2D6-47FC-BE5A-DF577606BAC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge7", "Challenge7\Challenge7.csproj", "{788A8F16-A2D6-47FC-BE5A-DF577606BAC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge8", "Challenge8\Challenge8.csproj", "{6D847881-46B8-49D6-A59C-DA73AD806B24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge8", "Challenge8\Challenge8.csproj", "{6D847881-46B8-49D6-A59C-DA73AD806B24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge9", "Challenge9\Challenge9.csproj", "{C1EBF588-503A-4F28-A734-AD1D2290553D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge9", "Challenge9\Challenge9.csproj", "{C1EBF588-503A-4F28-A734-AD1D2290553D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge10", "Challenge10\Challenge10.csproj", "{5AE9584C-3E15-4F1A-BE9B-97A16998D684}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge10", "Challenge10\Challenge10.csproj", "{5AE9584C-3E15-4F1A-BE9B-97A16998D684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge11", "Challenge11\Challenge11.csproj", "{38A56DFF-35DA-4173-BBF1-AFE42D48F02B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge11", "Challenge11\Challenge11.csproj", "{38A56DFF-35DA-4173-BBF1-AFE42D48F02B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge12", "Challenge12\Challenge12.csproj", "{6301F323-BE6E-4D11-83FB-9CCA88EB6F8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge12", "Challenge12\Challenge12.csproj", "{6301F323-BE6E-4D11-83FB-9CCA88EB6F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge13", "Challenge13\Challenge13.csproj", "{938C9947-7CF2-4EE3-8FB4-41EB753AEA71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge13", "Challenge13\Challenge13.csproj", "{938C9947-7CF2-4EE3-8FB4-41EB753AEA71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge14", "Challenge14\Challenge14.csproj", "{45675143-B77F-4A77-A06E-51AE4AB25E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge14", "Challenge14\Challenge14.csproj", "{45675143-B77F-4A77-A06E-51AE4AB25E78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeExecutor", "ChallengeExecutor\ChallengeExecutor.csproj", "{BABD394E-8314-4222-AD0F-2A2908E07F2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{45675143-B77F-4A77-A06E-51AE4AB25E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45675143-B77F-4A77-A06E-51AE4AB25E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45675143-B77F-4A77-A06E-51AE4AB25E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BABD394E-8314-4222-AD0F-2A2908E07F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BABD394E-8314-4222-AD0F-2A2908E07F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BABD394E-8314-4222-AD0F-2A2908E07F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BABD394E-8314-4222-AD0F-2A2908E07F2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
