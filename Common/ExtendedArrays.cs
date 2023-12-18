@@ -54,5 +54,27 @@ namespace Common
 
             return res;
         }
+
+        public static long GetSumOfNumbers(this string str)
+        {
+            long result = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                result += long.Parse(str[i].ToString());
+            }
+
+            return result;
+        }
+
+        public static long GetProductOfNumbers(this string str)
+        {
+            long result = 1;
+            for (int i = 0; i < str.Length; i++)
+            {
+                result *= long.Parse(str[i].ToString());
+            }
+
+            return result;
+        }
     }
 }
