@@ -9,3 +9,4 @@ Challenge 8: 23514624000
 Challenge 9: 31875000
 Challenge 10: 142913828922
 Challenge 11: 70600674. Position (X, Y): (6,12) 
+Challenge 12: Answer: 76576500, Iteration: 12375
