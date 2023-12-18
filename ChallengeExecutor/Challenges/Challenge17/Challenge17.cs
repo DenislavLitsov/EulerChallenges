@@ -76,11 +76,11 @@ namespace ChallengeExecutor.Challenges.Challenge17
             {
                 return this.nameTable[num];
             }
-            if (num <= 20)
+            else if (num <= 20)
             {
                 return this.nameTable[num];
             }
-            if (num < 100)
+            else if (num < 100)
             {
                 int wholeNum = (num / 10) * 10;
                 res += this.nameTable[wholeNum];
@@ -93,7 +93,7 @@ namespace ChallengeExecutor.Challenges.Challenge17
 
                 return res;
             }
-            if (num < 1000)
+            else if (num < 1000)
             {
                 int wholeNumHundred = (num / 100);
                 res += this.nameTable[wholeNumHundred] + this.nameTable[100];
@@ -107,11 +107,11 @@ namespace ChallengeExecutor.Challenges.Challenge17
 
                 return res;
             }
-            if (num == 1000)
+            else if (num == 1000)
             {
                 return this.nameTable[1000];
             }
-            if (num > 1000)
+            else
             {
                 throw new NotImplementedException();
             }
