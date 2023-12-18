@@ -14,7 +14,7 @@ Challenge 13: 5537376230. Whole number: 5537376230390876637302048746832985971773
 Challenge 14: Number: 837799, Iterations: 525
 Challenge 15: 137846528820 solved in 0ms
 Challenge 16: 1366
-Challenge 17: 
+Challenge 17: 21124
 Challenge 18: 
 Challenge 19: 
 Challenge 20: 648

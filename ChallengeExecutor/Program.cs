@@ -10,8 +10,8 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            Challenge20 Challenge20 = new Challenge20();
-            Challenge20.Solve();
+            Challenge17 Challenge17 = new Challenge17();
+            Challenge17.Solve();
         }
     }
 }
