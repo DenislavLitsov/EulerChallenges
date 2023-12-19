@@ -1,22 +1,31 @@
 ﻿using Common;
+using System.Numerics;
 
-namespace Challenge2
+namespace ChallengeExecutor.Challenges.Challenge2
 {
-    internal class Program
+    public class Challenge2 : BaseChallenge<int>
     {
-        static void Main(string[] args)
+        public Challenge2()
+        {
+        }
+
+        public override string GetName()
+        {
+            return "Challenge2";
+        }
+
+        protected override int SolveImplementation()
         {
             List<int> fibonacciNumbers = new List<int>();
             List<int> foundNumbers = new List<int>();
 
-            GenerateFibs(fibonacciNumbers);
+            this.GenerateFibs(fibonacciNumbers);
             fibonacciNumbers.ForEach(fibonacci => { Console.WriteLine(fibonacci); });
 
             foundNumbers = fibonacciNumbers.Where(x => x % 2 == 0).ToList();
-            Console.WriteLine(foundNumbers.Sum());
+            return foundNumbers.Sum();
         }
-
-        static void GenerateFibs(IList<int> container)
+        void GenerateFibs(IList<int> container)
         {
             container.Add(1);
             container.Add(2);

@@ -21,6 +21,8 @@ namespace Common.ProducerConsumer
 
         public static bool Solved { get => solved; private set => solved = value; }
 
+        public static T Answer { get; private set; }
+
         public void Start()
         {
             while (!solved)
@@ -31,6 +33,7 @@ namespace Common.ProducerConsumer
                 {
                     mutex.WaitOne();
                     solved = result;
+                    Answer = nextValue;
                     mutex.ReleaseMutex();
 
                     SafePrint.Print($"!!!SOLVED!!!!: {nextValue.ToString()}");

@@ -1,10 +1,19 @@
 ﻿using Common;
 
-namespace Challenge3
+namespace ChallengeExecutor.Challenges.Challenge3
 {
-    internal class Program
+    public class Challenge3 : BaseChallenge<long>
     {
-        static void Main(string[] args)
+        public Challenge3()
+        {
+        }
+
+        public override string GetName()
+        {
+            return "Challenge3";
+        }
+
+        protected override long SolveImplementation()
         {
             long number = 600851475143;
             List<long> dividers = new List<long>();
@@ -20,12 +29,21 @@ namespace Challenge3
                         Console.WriteLine($"Number: {number}, divider: {i}");
                         break;
                     }
+
+                    if (AdvancedMath.IsPrime(number))
+                    {
+                        dividers.Add(number);
+                        number = 1;
+                        break;
+                    }
                 }
             } while (number != 1);
 
 
             // 6857 is the answer
             dividers.Print();
+
+            return dividers.Max();
         }
     }
 }

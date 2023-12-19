@@ -1,10 +1,6 @@
-﻿using Common;
-using Common.Maps;
-using Common.Maps.PathFinding;
-
-namespace ChallengeExecutor.Challenges.Challenge18
+﻿namespace ChallengeExecutor.Challenges.Challenge67
 {
-    public class Challenge67 : Challenge18
+    public class Challenge67 : Challenge18.Challenge18
     {
         protected override string GetMapPath()
         {

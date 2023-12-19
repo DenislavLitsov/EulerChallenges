@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChallengeExecutor.Challenges.Challenge19
+﻿namespace ChallengeExecutor.Challenges.Challenge19
 {
     public class Challenge19 : BaseChallenge<int>
     {

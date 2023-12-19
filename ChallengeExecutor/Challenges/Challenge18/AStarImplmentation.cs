@@ -1,11 +1,6 @@
 ﻿using Common.Maps;
 using Common.Maps.PathFinding;
 using Common.Maps.PathFinding.AStar;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChallengeExecutor.Challenges.Challenge18
 {

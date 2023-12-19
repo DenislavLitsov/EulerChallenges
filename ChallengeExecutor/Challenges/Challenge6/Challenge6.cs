@@ -1,8 +1,17 @@
-﻿namespace Challenge6
+﻿namespace ChallengeExecutor.Challenges.Challenge6
 {
-    internal class Program
+    public class Challenge6 : BaseChallenge<long>
     {
-        static void Main(string[] args)
+        public Challenge6()
+        {
+        }
+
+        public override string GetName()
+        {
+            return "Challenge6";
+        }
+
+        protected override long SolveImplementation()
         {
             long sumOfSquares = 0;
             for (int i = 1; i <= 100; i++)
@@ -23,6 +32,8 @@
             Console.WriteLine($"squareOfSum: {squareOfSum}");
 
             Console.WriteLine($"Difference: {squareOfSum - sumOfSquares}");
+
+            return squareOfSum - sumOfSquares;
         }
     }
 }

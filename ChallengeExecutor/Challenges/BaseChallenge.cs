@@ -14,7 +14,7 @@ namespace ChallengeExecutor.Challenges
 
         public abstract string GetName();
 
-        public void Solve()
+        public T Solve()
         {
             this.stopwatch = Stopwatch.StartNew();
             var res = this.SolveImplementation();
@@ -23,6 +23,7 @@ namespace ChallengeExecutor.Challenges
             this.Answer = res;
 
             Console.WriteLine($"Challenge: {this.GetName()}, Answer: {this.Answer.ToString()}. Solved for: {stopwatch.ElapsedMilliseconds}ms");
+            return this.Answer;
         }
 
         protected long GetTotalElapsedMiliseconds()

@@ -1,10 +1,20 @@
 ﻿using Common;
+using System.Numerics;
 
-namespace Challenge4
+namespace ChallengeExecutor.Challenges.Challenge4
 {
-    internal class Program
+    public class Challenge4 : BaseChallenge<long>
     {
-        static void Main(string[] args)
+        public Challenge4()
+        {
+        }
+
+        public override string GetName()
+        {
+            return "Challenge4";
+        }
+
+        protected override long SolveImplementation()
         {
 
             int currentMaxPalidrome = 0;
@@ -16,20 +26,18 @@ namespace Challenge4
                     int multiple = number1 * number2;
                     if (isPalidrome(multiple))
                     {
-                        Console.WriteLine($"New Palindrome: {multiple}");
                         if (multiple > currentMaxPalidrome)
                         {
                             currentMaxPalidrome = multiple;
-                            Console.WriteLine($"New Max Palindrome: {multiple}");
                         }
                     }
                 }
             }
 
-            Console.WriteLine($"Max palindrome: {currentMaxPalidrome}");
+            return currentMaxPalidrome;
         }
 
-        static bool isPalidrome(int number)
+        private bool isPalidrome(int number)
         {
             string stringified = number.ToString();
             if (stringified.Length % 2 != 0)

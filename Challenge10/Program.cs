@@ -1,4 +1,5 @@
 ﻿using Common;
+using System.Diagnostics;
 
 namespace Challenge10
 {
@@ -6,6 +7,8 @@ namespace Challenge10
     {
         static void Main()
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             List<long> primes = new List<long>();
             for (int i = 2; i < 2000000; i++)
             {
@@ -19,6 +22,8 @@ namespace Challenge10
                 }
             }
 
+            stopwatch.Stop();
+            Console.WriteLine(stopwatch.ElapsedMilliseconds);
             Console.WriteLine(primes.Sum());
         }
     }
