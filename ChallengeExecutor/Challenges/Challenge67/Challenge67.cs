@@ -13,7 +13,7 @@ namespace ChallengeExecutor.Challenges.Challenge18
 
         public override string GetName()
         {
-            return "Challenge18";
+            return "Challenge67";
         }
 
         protected override long SolveImplementation()
