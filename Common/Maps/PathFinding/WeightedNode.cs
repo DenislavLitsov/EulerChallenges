@@ -10,8 +10,6 @@
 
         public int Weight { get; private set; }
 
-        public int DistanceWeight { get; set; }
-
         public int CalculatedPathWeight { get; set; }
 
         public bool IsCalculated
