@@ -17,11 +17,12 @@ namespace Common.ProducerConsumer
         public BaseConsumer(BaseProducer<T> producer)
         {
             this.producer = producer;
+            this.NullAnswers();
         }
 
-        public static bool Solved { get => solved; private set => solved = value; }
+        public static bool Solved { get => solved; protected set => solved = value; }
 
-        public static T Answer { get; private set; }
+        public static T Answer { get; protected set; }
 
         public void Start()
         {
@@ -42,5 +43,7 @@ namespace Common.ProducerConsumer
         }
 
         protected abstract bool Test(T item);
+
+        protected abstract void NullAnswers();
     }
 }

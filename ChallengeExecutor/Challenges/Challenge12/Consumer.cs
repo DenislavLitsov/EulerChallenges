@@ -1,4 +1,5 @@
-﻿using Common.ProducerConsumer;
+﻿using Common;
+using Common.ProducerConsumer;
 
 namespace ChallengeExecutor.Challenges.Challenge12
 {
@@ -11,21 +12,29 @@ namespace ChallengeExecutor.Challenges.Challenge12
         {
         }
 
+        protected override void NullAnswers()
+        {
+            Solved = false;
+            Answer = 0;
+        }
+
         protected override bool Test(long item)
         {
             long divisibles = this.TotalNumberOfDivisors(item);
-            if (divisibles > biggsetDivision)
-            {
-                BaseConsumer<long>.mutex.WaitOne();
-                biggsetDivision = divisibles;
-                biggestTriangle = item;
-                SafePrint.Print($"Current best: {biggsetDivision}, Triangle Value: {biggestTriangle}");
-                BaseConsumer<long>.mutex.ReleaseMutex();
-            }
+            //if (divisibles > biggsetDivision)
+            //{
+            //    BaseConsumer<long>.mutex.WaitOne();
+            //    biggsetDivision = divisibles;
+            //    biggestTriangle = item;
+            //    SafePrint.Print($"Current best: {biggsetDivision}, Triangle Value: {biggestTriangle}");
+            //    BaseConsumer<long>.mutex.ReleaseMutex();
+            //}
 
             if (divisibles > 500)
             {
                 BaseConsumer<long>.mutex.WaitOne();
+                biggsetDivision = divisibles;
+                biggestTriangle = item;
                 return true;
                 BaseConsumer<long>.mutex.ReleaseMutex();
             }
@@ -35,6 +44,9 @@ namespace ChallengeExecutor.Challenges.Challenge12
 
         private long TotalNumberOfDivisors(long number)
         {
+            var divisors = number.GetAllDivisorsExcludingSameNumber();
+            return divisors.Count();
+
             long totalNumber = 0;
             for (long i = 1; i < (number / 2) + 1; i++)
             {

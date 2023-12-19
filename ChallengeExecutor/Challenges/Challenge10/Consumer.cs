@@ -11,6 +11,12 @@ namespace ChallengeExecutor.Challenges.Challenge10
         {
         }
 
+        protected override void NullAnswers()
+        {
+            Solved = false;
+            Answer = 0;
+        }
+
         protected override bool Test(long item)
         {
             if (2000000 <= item)
