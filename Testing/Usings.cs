@@ -22,5 +22,6 @@ global using ChallengeExecutor.Challenges.Challenge20;
 global using ChallengeExecutor.Challenges.Challenge21;
 global using ChallengeExecutor.Challenges.Challenge22;
 global using ChallengeExecutor.Challenges.Challenge23;
+global using ChallengeExecutor.Challenges.Challenge25;
 global using ChallengeExecutor.Challenges.Challenge67;
 global using Common;

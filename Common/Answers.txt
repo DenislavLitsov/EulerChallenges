@@ -21,4 +21,5 @@ Challenge 20: 648
 Challenge 21: 31626
 Challenge 22: 871198282
 Challenge 23: 4179871
+Challenge 25: 4782
 Challenge 67: 7273
