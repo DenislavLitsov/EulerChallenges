@@ -6,7 +6,12 @@ namespace ChallengeExecutor.Challenges.Challenge18
 {
     public class Challenge18 : BaseChallenge<long>
     {
-        private AStarImplmentation aStarImplmentation;
+        protected AStarImplmentation aStarImplmentation;
+
+        protected virtual string GetMapPath()
+        {
+            return "Challenges/Challenge18/map.txt";
+        }
 
         public override string GetName()
         {
@@ -20,10 +25,10 @@ namespace ChallengeExecutor.Challenges.Challenge18
             return bestWeight;
         }
 
-        private void InitAStarImplementation()
+        protected void InitAStarImplementation()
         {
             Map<WeightedNode> map = new Map<WeightedNode>();
-            using (StreamReader sr = new StreamReader("Challenges/Challenge18/map.txt"))
+            using (StreamReader sr = new StreamReader(this.GetMapPath()))
             {
                 int y = 0;
                 do

@@ -11,8 +11,8 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            Challenge18 Challenge18 = new Challenge18();
-            Challenge18.Solve();
+            Challenge67 challenge = new Challenge67();
+            challenge.Solve();
         }
     }
 }
