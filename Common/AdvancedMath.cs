@@ -36,7 +36,9 @@
         {
             List<long> res = new List<long>();
 
-            for (long i = 1; i < (number / 2) + 1; i++)
+            res.Add(1);
+
+            for (long i = 2; i < (number / 2) + 1; i++)
             {
                 if (number % i == 0)
                 {
@@ -51,13 +53,9 @@
         {
             List<int> res = new List<int>();
 
-            if (number == 1)
-            {
-                res.Add(1);
-                return res;
-            }
+            res.Add(1);
 
-            for (int i = 1; i < (number / 2) + 1; i++)
+            for (int i = 2; i < (number / 2) + 1; i++)
             {
                 if (number % i == 0)
                 {

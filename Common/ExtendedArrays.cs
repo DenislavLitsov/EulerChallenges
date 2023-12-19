@@ -4,25 +4,40 @@ namespace Common
 {
     public static class ExtendedArrays
     {
-        public static void Print(this List<int> list)
+        public static void Print(this IEnumerable<int> list)
         {
-            list.ForEach(x => { Console.WriteLine(x); });
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
-        public static void Print(this List<long> list)
+        public static void Print(this IEnumerable<long> list)
         {
-            list.ForEach(x => { Console.WriteLine(x); });
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
-        public static void Print(this List<double> list)
+        public static void Print(this IEnumerable<double> list)
         {
-            list.ForEach(x => { Console.WriteLine(x); });
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
-        public static void Print(this List<float> list)
+        public static void Print(this IEnumerable<float> list)
         {
-            list.ForEach(x => { Console.WriteLine(x); });
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
-        public static void Print(this List<string> list)
+        public static void Print(this IEnumerable<string> list)
         {
-            list.ForEach(x => { Console.WriteLine(x); });
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         public static string Stringify(this List<char> list)
