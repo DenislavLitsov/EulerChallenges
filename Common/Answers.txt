@@ -18,4 +18,6 @@ Challenge 17: 21124
 Challenge 18: 1074
 Challenge 19: 171
 Challenge 20: 648
+Challenge 21: 31626
+Challenge 22: 871198282
 Challenge 67: 7273
