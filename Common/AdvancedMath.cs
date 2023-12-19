@@ -1,4 +1,6 @@
-﻿namespace Common
+﻿using System.Numerics;
+
+namespace Common
 {
     public static class AdvancedMath
     {
@@ -64,6 +66,66 @@
             }
 
             return res;
+        }
+
+        public static BigInteger BigPower(this long number, int power)
+        {
+            if (power == 0)
+            {
+                return 1;
+            }
+            if (power < 0)
+            {
+                throw new NotImplementedException();
+            }
+
+            BigInteger result = number;
+            for (int i = 0; i < power - 1; i++)
+            {
+                result *= number;
+            }
+
+            return result;
+        }
+
+        public static BigInteger BigPower(this int number, int power)
+        {
+            if (power == 0)
+            {
+                return 1;
+            }
+            if (power < 0)
+            {
+                throw new NotImplementedException();
+            }
+
+            BigInteger result = number;
+            for (int i = 0; i < power - 1; i++)
+            {
+                result *= number;
+            }
+
+            return result;
+        }
+
+        public static BigInteger BigPower(this BigInteger number, int power)
+        {
+            if (power == 0)
+            {
+                return 1;
+            }
+            if (power < 0)
+            {
+                throw new NotImplementedException();
+            }
+
+            BigInteger result = number;
+            for (int i = 0; i < power - 1; i++)
+            {
+                result *= number;
+            }
+
+            return result;
         }
     }
 }
