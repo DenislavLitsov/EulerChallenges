@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Common
 {
@@ -38,6 +40,57 @@ namespace Common
             {
                 Console.WriteLine(item);
             }
+        }
+
+        public static IEnumerable<int> DeepCopy(this IEnumerable<int> list)
+        {
+            var newList = new List<int>();
+            foreach (var item in list)
+            {
+                newList.Add(item);
+            }
+
+            return newList;
+        }
+        public static IEnumerable<long> DeepCopy(this IEnumerable<long> list)
+        {
+            var newList = new List<long>();
+            foreach (var item in list)
+            {
+                newList.Add(item);
+            }
+
+            return newList;
+        }
+        public static IEnumerable<double> DeepCopy(this IEnumerable<double> list)
+        {
+            var newList = new List<double>();
+            foreach (var item in list)
+            {
+                newList.Add(item);
+            }
+
+            return newList;
+        }
+        public static IEnumerable<float> DeepCopy(this IEnumerable<float> list)
+        {
+            var newList = new List<float>();
+            foreach (var item in list)
+            {
+                newList.Add(item);
+            }
+
+            return newList;
+        }
+        public static IEnumerable<string> DeepCopy(this IEnumerable<string> list)
+        {
+            var newList = new List<string>();
+            foreach (var item in list)
+            {
+                newList.Add(item);
+            }
+
+            return newList;
         }
 
         public static string Stringify(this List<char> list)
