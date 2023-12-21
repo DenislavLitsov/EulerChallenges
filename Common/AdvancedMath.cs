@@ -127,5 +127,16 @@ namespace Common
 
             return result;
         }
+
+        public static BigInteger RemoveRightZeros(this BigInteger integer)
+        {
+            BigInteger result = integer;
+            while (result % 10 == 0)
+            {
+                result /= 10;
+            }
+
+            return result;
+        }
     }
 }
