@@ -24,7 +24,14 @@ namespace Common
         {
             get
             {
-                return MainPart.ToString() + "," + DecimalPart.ToString();
+                StringBuilder sb = new StringBuilder(MainPart.ToString());
+                sb.Append(",");
+                for (int i = 0; i < this.DecimalLeftZeros; i++)
+                {
+                    sb.Append("0");
+                }
+                sb.Append(DecimalPart.ToString());
+                return sb.ToString();
             }
         }
 
@@ -257,9 +264,6 @@ namespace Common
             }
             else
             {
-                //int smallerLeftZeros = mainNumber.DecimalLeftZeros > secondNumber.DecimalLeftZeros ?
-                //    secondNumber.DecimalLeftZeros : mainNumber.DecimalLeftZeros;
-
                 newDecimalPart = decimalPart1 - decimalPart2;
 
                 int difference = mainNumber.decimalCountPrecision - newDecimalPart.ToString().Length;
@@ -271,7 +275,87 @@ namespace Common
         }
         public static BigDecimal operator *(BigDecimal mainNumber, BigDecimal secondNumber)
         {
-            throw new NotImplementedException();
+            BigInteger newMainPart = 0;
+            BigInteger newDecimalPart = 0;
+            int leftZeros = 0;
+
+            int decimalPart = 0;
+
+            BigInteger decimalPart1 = mainNumber.UpScaleDecimalPart();
+            BigInteger decimalPart2 = secondNumber.UpScaleDecimalPart();
+
+            StringBuilder fullNumber1 = new StringBuilder(mainNumber.MainPart.ToString());
+            if (decimalPart1 > 0)
+            {
+                if (mainNumber.DecimalLeftZeros > 0)
+                {
+                    int count = mainNumber.DecimalLeftZeros;
+                    for (int i = 0; i < count; i++)
+                    {
+                        fullNumber1.Append("0");
+                    }
+                }
+                fullNumber1.Append(decimalPart1.ToString());
+                decimalPart += mainNumber.decimalCountPrecision;
+            }
+
+            StringBuilder fullNumber2 = new StringBuilder(secondNumber.MainPart.ToString());
+            if (decimalPart2 > 0)
+            {
+                if (secondNumber.DecimalLeftZeros > 0)
+                {
+                    int count = secondNumber.DecimalLeftZeros;
+                    for (int i = 0; i < count; i++)
+                    {
+                        fullNumber2.Append("0");
+                    }
+                }
+                fullNumber2.Append(decimalPart2.ToString());
+                decimalPart += secondNumber.decimalCountPrecision;
+            }
+
+            BigInteger parsedNumber1 = BigInteger.Parse(fullNumber1.ToString());
+            BigInteger parsedNumber2 = BigInteger.Parse(fullNumber2.ToString());
+
+            BigInteger fullNumber = parsedNumber1 * parsedNumber2;
+
+            string fullNumberAsString = fullNumber.ToString();
+            int mainPartCount = fullNumberAsString.Length - decimalPart;
+            string newMainPartAsString = fullNumberAsString.Substring(0, mainPartCount);
+
+            string fullDecimalPart = fullNumberAsString.Substring(mainPartCount, decimalPart);
+            int startingZeroCount = 0;
+            for (int i = 0; i < fullDecimalPart.Length; i++)
+            {
+                if (fullDecimalPart[i] == '0')
+                {
+                    startingZeroCount++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            string fullDecimalPartAsString = fullDecimalPart.ToString();
+            if (fullDecimalPartAsString == string.Empty)
+            {
+                fullDecimalPartAsString = "0";
+            }
+
+            newMainPart = BigInteger.Parse(newMainPartAsString);
+            newDecimalPart = BigInteger.Parse(fullDecimalPartAsString);
+
+            string newDecimalPartAsString = newDecimalPart.ToString();
+            if (newDecimalPartAsString.Length > mainNumber.decimalCountPrecision)
+            {
+                newDecimalPart = BigInteger.Parse(newDecimalPartAsString.Substring(0, mainNumber.decimalCountPrecision - startingZeroCount));
+            }
+
+            leftZeros = startingZeroCount;
+
+            var result = new BigDecimal(newMainPart, newDecimalPart, leftZeros, mainNumber.decimalCountPrecision);
+            return result;
         }
 
         public static BigDecimal operator /(BigDecimal mainNumber, BigDecimal secondNumber)

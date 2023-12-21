@@ -223,7 +223,6 @@ namespace Testing
         [Test]
         public void C01_TestSubstraction()
         {
-
             var a1 = new BigDecimal(6, 0, 0, 1000);
             var b1 = new BigDecimal(5, 0, 0, 1000);
             var c1 = new BigDecimal(1, 0, 0, 1000);
@@ -366,6 +365,76 @@ namespace Testing
                 BigDecimal bigDecimal2 = new BigDecimal(5, 5, 6, 1000);
 
                 var bigDecimal3 = bigDecimal1 - bigDecimal2;
+            }
+            sw.Stop();
+
+            Assert.That(sw.ElapsedMilliseconds < 120);
+        }
+
+        [Test]
+        public void D01_TestMultiplication()
+        {
+            var a = new BigDecimal(5, 0, 0, 1000);
+            var b = new BigDecimal(5, 0, 0, 1000);
+            var c = new BigDecimal(25, 0, 0, 1000);
+
+            var multiplication = a * b;
+            Assert.That(multiplication == c);
+
+            a = new BigDecimal(5, 5, 0, 1000);
+            b = new BigDecimal(5, 5, 0, 1000);
+            c = new BigDecimal(30, 25, 0, 1000);
+
+            multiplication = a * b;
+            Assert.That(multiplication == c);
+
+            a = new BigDecimal(2, 5, 0, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(5, 0, 0, 1000);
+
+            multiplication = a * b;
+            Assert.That(multiplication == c);
+
+            a = new BigDecimal(2, 55, 0, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(5, 1, 0, 1000);
+
+            multiplication = a * b;
+            Assert.That(multiplication == c);
+
+            a = new BigDecimal(2, 5, 1, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(4, 1, 0, 1000);
+
+            multiplication = a * b;
+            Assert.That(multiplication == c);
+
+            a = new BigDecimal(2, 123, 3, 1000);
+            b = new BigDecimal(3, 1234, 5, 1000);
+            c = new BigDecimal(6, 371468151782, 3, 1000);
+
+            multiplication = a * b;
+            Assert.That(multiplication == c);
+
+            a = new BigDecimal(2, 123, 0, 1000);
+            b = new BigDecimal(3, 1234, 5, 1000);
+            c = new BigDecimal(6, 369002619782, 0, 1000);
+
+            multiplication = a * b;
+            Assert.That(multiplication == c);
+        }
+
+        [Test]
+        public void D02_TestMultiplicationTimeRequirement()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            for (int i = 0; i < 1000; i++)
+            {
+                BigDecimal bigDecimal1 = new BigDecimal(5, 5, 5, 1000);
+                BigDecimal bigDecimal2 = new BigDecimal(5, 5, 6, 1000);
+
+                var bigDecimal3 = bigDecimal1 * bigDecimal2;
             }
             sw.Stop();
 
