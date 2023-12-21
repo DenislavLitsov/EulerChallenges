@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Common
 {
@@ -45,31 +46,20 @@ namespace Common
 
             if (this.MainPart == secondBigDecimal.MainPart)
             {
-                if (this.DecimalLeftZeros == secondBigDecimal.DecimalLeftZeros)
-                {
-                    var comparePart1 = this.UpScaleDecimalPart();
-                    var comparePart2 = secondBigDecimal.UpScaleDecimalPart();
+                var comparePart1 = this.UpScaleDecimalPart();
+                var comparePart2 = secondBigDecimal.UpScaleDecimalPart();
 
-                    if (comparePart1 == comparePart2)
-                    {
-                        return 0;
-                    }
-                    else if (comparePart1 > comparePart2)
-                    {
-                        return 1;
-                    }
-                    else
-                    {
-                        return -1;
-                    }
-                }
-                else if (this.DecimalLeftZeros > secondBigDecimal.DecimalLeftZeros)
+                if (comparePart1 == comparePart2)
                 {
-                    return -1;
+                    return 0;
+                }
+                else if (comparePart1 > comparePart2)
+                {
+                    return 1;
                 }
                 else
                 {
-                    return 1;
+                    return -1;
                 }
             }
             else
@@ -240,7 +230,44 @@ namespace Common
         }
         public static BigDecimal operator -(BigDecimal mainNumber, BigDecimal secondNumber)
         {
-            throw new NotImplementedException();
+            if (secondNumber > mainNumber)
+            {
+                throw new NotSupportedException("Not supported substraction with bigger second value. Because value will be less then 0");
+            }
+
+
+            BigInteger newMainPart = mainNumber.MainPart - secondNumber.MainPart;
+            BigInteger newDecimalPart = 0;
+            int leftZeros = 0;
+
+            BigInteger decimalPart1 = mainNumber.UpScaleDecimalPart();
+            BigInteger decimalPart2 = secondNumber.UpScaleDecimalPart();
+
+            if (decimalPart2 > decimalPart1)
+            {
+                newMainPart--;
+
+                var fixDecimal = new BigDecimal(0, 1, 0, mainNumber.decimalCountPrecision);
+                var toAdd = fixDecimal.UpScaleDecimalPart() * 10;
+                decimalPart1 += toAdd;
+
+                newDecimalPart = decimalPart1 - decimalPart2;
+                int difference = mainNumber.decimalCountPrecision - newDecimalPart.ToString().Length;
+                leftZeros = difference;
+            }
+            else
+            {
+                //int smallerLeftZeros = mainNumber.DecimalLeftZeros > secondNumber.DecimalLeftZeros ?
+                //    secondNumber.DecimalLeftZeros : mainNumber.DecimalLeftZeros;
+
+                newDecimalPart = decimalPart1 - decimalPart2;
+
+                int difference = mainNumber.decimalCountPrecision - newDecimalPart.ToString().Length;
+                leftZeros = difference;
+            }
+
+            return new BigDecimal(newMainPart, newDecimalPart, leftZeros, mainNumber.decimalCountPrecision);
+
         }
         public static BigDecimal operator *(BigDecimal mainNumber, BigDecimal secondNumber)
         {
@@ -262,15 +289,16 @@ namespace Common
 
         private BigInteger UpScaleDecimalPart()
         {
-            BigInteger result = this.DecimalPart;
-            int upscaleCount = this.decimalCountPrecision - this.DecimalLeftZeros - result.ToString().Length;
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(this.DecimalPart.ToString());
+            int upscaleCount = this.decimalCountPrecision - this.DecimalLeftZeros - stringBuilder.Length;
 
             for (int i = 0; i < upscaleCount; i++)
             {
-                result *= 10;
+                stringBuilder.Append("0");
             }
 
-            return result;
+            return BigInteger.Parse(stringBuilder.ToString());
         }
     }
 }
