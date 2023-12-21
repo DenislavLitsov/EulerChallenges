@@ -431,8 +431,8 @@ namespace Testing
             sw.Start();
             for (int i = 0; i < 1000; i++)
             {
-                BigDecimal bigDecimal1 = new BigDecimal(5, 5, 5, 1000);
-                BigDecimal bigDecimal2 = new BigDecimal(5, 5, 6, 1000);
+                BigDecimal bigDecimal1 = new BigDecimal(int.MaxValue, long.MaxValue, 5, 1000);
+                BigDecimal bigDecimal2 = new BigDecimal(long.MaxValue, int.MaxValue, 4, 1000);
 
                 var bigDecimal3 = bigDecimal1 * bigDecimal2;
             }

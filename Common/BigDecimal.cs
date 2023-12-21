@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -242,7 +243,6 @@ namespace Common
                 throw new NotSupportedException("Not supported substraction with bigger second value. Because value will be less then 0");
             }
 
-
             BigInteger newMainPart = mainNumber.MainPart - secondNumber.MainPart;
             BigInteger newDecimalPart = 0;
             int leftZeros = 0;
@@ -279,14 +279,28 @@ namespace Common
             BigInteger newDecimalPart = 0;
             int leftZeros = 0;
 
-            int decimalPart = 0;
-
-            BigInteger decimalPart1 = mainNumber.UpScaleDecimalPart();
-            BigInteger decimalPart2 = secondNumber.UpScaleDecimalPart();
-
+            //int decimalPart = 0;
             StringBuilder fullNumber1 = new StringBuilder(mainNumber.MainPart.ToString());
-            if (decimalPart1 > 0)
+            StringBuilder fullNumber2 = new StringBuilder(secondNumber.MainPart.ToString());
+
+            int totalZeros = 0;
+            int totalZeros1 = 0;
+            int totalZeros2 = 0;
+
+            if (mainNumber.DecimalPart != 0)
             {
+                totalZeros1 = mainNumber.DecimalLeftZeros + mainNumber.DecimalPart.ToString().Length;
+                totalZeros += totalZeros1;
+            }
+            if (secondNumber.DecimalPart != 0)
+            {
+                totalZeros2 = secondNumber.DecimalLeftZeros + secondNumber.DecimalPart.ToString().Length;
+                totalZeros += totalZeros2;
+            }
+
+            if (mainNumber.DecimalPart > 0)
+            {
+                BigInteger decimalPart1 = mainNumber.UpScaleDecimalPart(totalZeros - mainNumber.DecimalLeftZeros);
                 if (mainNumber.DecimalLeftZeros > 0)
                 {
                     int count = mainNumber.DecimalLeftZeros;
@@ -296,12 +310,11 @@ namespace Common
                     }
                 }
                 fullNumber1.Append(decimalPart1.ToString());
-                decimalPart += mainNumber.decimalCountPrecision;
             }
 
-            StringBuilder fullNumber2 = new StringBuilder(secondNumber.MainPart.ToString());
-            if (decimalPart2 > 0)
+            if (secondNumber.DecimalPart > 0)
             {
+                BigInteger decimalPart2 = secondNumber.UpScaleDecimalPart(totalZeros - secondNumber.DecimalLeftZeros);
                 if (secondNumber.DecimalLeftZeros > 0)
                 {
                     int count = secondNumber.DecimalLeftZeros;
@@ -311,7 +324,6 @@ namespace Common
                     }
                 }
                 fullNumber2.Append(decimalPart2.ToString());
-                decimalPart += secondNumber.decimalCountPrecision;
             }
 
             BigInteger parsedNumber1 = BigInteger.Parse(fullNumber1.ToString());
@@ -320,10 +332,14 @@ namespace Common
             BigInteger fullNumber = parsedNumber1 * parsedNumber2;
 
             string fullNumberAsString = fullNumber.ToString();
-            int mainPartCount = fullNumberAsString.Length - decimalPart;
+            if (totalZeros1 != 0 && totalZeros2 != 0)
+            {
+                totalZeros *= 2;
+            }
+            int mainPartCount = fullNumberAsString.Length - totalZeros;
             string newMainPartAsString = fullNumberAsString.Substring(0, mainPartCount);
 
-            string fullDecimalPart = fullNumberAsString.Substring(mainPartCount, decimalPart);
+            string fullDecimalPart = fullNumberAsString.Substring(mainPartCount, totalZeros);
             int startingZeroCount = 0;
             for (int i = 0; i < fullDecimalPart.Length; i++)
             {
@@ -371,11 +387,20 @@ namespace Common
             }
         }
 
-        private BigInteger UpScaleDecimalPart()
+        private BigInteger UpScaleDecimalPart(int digitsNeeded = 0)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append(this.DecimalPart.ToString());
             int upscaleCount = this.decimalCountPrecision - this.DecimalLeftZeros - stringBuilder.Length;
+
+            if (digitsNeeded != 0)
+            {
+                upscaleCount = digitsNeeded - stringBuilder.Length;
+                if (upscaleCount < 0)
+                {
+                    throw new Exception();
+                }
+            }
 
             for (int i = 0; i < upscaleCount; i++)
             {
