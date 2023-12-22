@@ -11,6 +11,22 @@ namespace Testing
         }
 
 
+        [Test]
+        public void A00_TestStringConversion()
+        {
+            var a = new BigDecimal(1, 0, 0, 1000);
+            string aString = a.Value;
+            Assert.That(aString, Is.EqualTo("1,0"));
+
+            a = new BigDecimal(1, 1, 0, 1000);
+            aString = a.Value;
+            Assert.That(aString, Is.EqualTo("1,1"));
+
+            a = new BigDecimal(1, 1, 3, 1000);
+            aString = a.Value;
+            Assert.That(aString, Is.EqualTo("1,0001"));
+        }
+
         [Test()]
         public void A01_TestEqual()
         {
@@ -439,6 +455,136 @@ namespace Testing
             sw.Stop();
 
             Assert.That(sw.ElapsedMilliseconds < 120);
+        }
+
+        [Test]
+        public void E01_TestDivision()
+        {
+            var a = new BigDecimal(5, 0, 0, 1000);
+            var b = new BigDecimal(5, 0, 0, 1000);
+            var c = new BigDecimal(1, 0, 0, 1000);
+
+            var division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(5, 0, 0, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(2, 5, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(50, 5, 0, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(25, 25, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+            
+            a = new BigDecimal(10, 5, 0, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(5, 25, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(5, 0, 0, 1000);
+            b = new BigDecimal(2, 55, 0, 1000);
+            c = new BigDecimal(1, 96088431372549, 0, 1000);
+            var d = new BigDecimal(1, 96078431372549, 0, 1000);
+
+            division = a / b;
+            Assert.That(division > d);
+            Assert.That(division < c);
+
+            a = new BigDecimal(7, 0, 0, 1000);
+            b = new BigDecimal(3, 0, 0, 1000);
+
+            c = new BigDecimal(2, 3334, 0, 1000);
+            d = new BigDecimal(2, 3332, 0, 1000);
+
+            division = a / b;
+            Assert.That(division > d);
+            Assert.That(division < c);
+
+            a = new BigDecimal(5, 3, 2, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(2, 5015, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(5, 3, 2, 1000);
+            b = new BigDecimal(2, 3, 3, 1000);
+            c = new BigDecimal(2, 50112483127531, 0, 1000);
+            d = new BigDecimal(2, 50112483127530, 0, 1000);
+
+            division = a / b;
+            Assert.That(division > d);
+            Assert.That(division < c);
+
+            a = new BigDecimal(6, 3, 2, 1000);
+            b = new BigDecimal(2, 0, 0, 1000);
+            c = new BigDecimal(3, 15, 2, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(6, 3, 2, 1000);
+            b = new BigDecimal(2, 4, 3, 1000);
+            c = new BigDecimal(3, 899820035994, 3, 1000);
+            d = new BigDecimal(3, 899820035992, 3, 1000);
+
+
+            division = a / b;
+            int count = division.ToString().Length;
+            Assert.That(division > d);
+            Assert.That(division < c);
+
+            a = new BigDecimal(4, 0, 0, 1000);
+            b = new BigDecimal(8, 0, 0, 1000);
+            c = new BigDecimal(0, 5, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(4, 2, 0, 1000);
+            b = new BigDecimal(8, 0, 0, 1000);
+            c = new BigDecimal(0, 525, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(0, 5, 0, 1000);
+            b = new BigDecimal(0, 25, 0, 1000);
+            c = new BigDecimal(2, 0, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(1, 0, 0, 1000);
+            b = new BigDecimal(2000, 0, 0, 1000);
+            c = new BigDecimal(0, 5, 3, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+        }
+
+        [Test]
+        public void E02_TestDivisionTimeRequirement()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            for (int i = 0; i < 1000; i++)
+            {
+                BigDecimal bigDecimal1 = new BigDecimal(int.MaxValue, long.MaxValue, 5, 1000);
+                BigDecimal bigDecimal2 = new BigDecimal(long.MaxValue, int.MaxValue, 4, 1000);
+
+                var bigDecimal3 = bigDecimal1 / bigDecimal2;
+            }
+            sw.Stop();
+
+            Assert.That(sw.ElapsedMilliseconds < 500);
         }
     }
 }

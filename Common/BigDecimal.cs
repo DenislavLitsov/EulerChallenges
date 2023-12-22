@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Dynamic;
+using System.Numerics;
 using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -34,6 +35,29 @@ namespace Common
                 sb.Append(DecimalPart.ToString());
                 return sb.ToString();
             }
+        }
+
+        private BigInteger UpScaleDecimalPart(int digitsNeeded = 0)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(this.DecimalPart.ToString());
+            int upscaleCount = this.decimalCountPrecision - this.DecimalLeftZeros - stringBuilder.Length;
+
+            if (digitsNeeded != 0)
+            {
+                upscaleCount = digitsNeeded - stringBuilder.Length;
+                if (upscaleCount < 0)
+                {
+                    throw new Exception();
+                }
+            }
+
+            for (int i = 0; i < upscaleCount; i++)
+            {
+                stringBuilder.Append("0");
+            }
+
+            return BigInteger.Parse(stringBuilder.ToString());
         }
 
         public bool Equals(BigDecimal? other)
@@ -81,6 +105,11 @@ namespace Common
                     return -1;
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return Value;
         }
 
         public static bool operator ==(BigDecimal mainNumber, BigDecimal secondNumber)
@@ -236,6 +265,7 @@ namespace Common
             return new BigDecimal(newMainPart, newDecimalPart, leftZeros, mainNumber.decimalCountPrecision);
 
         }
+
         public static BigDecimal operator -(BigDecimal mainNumber, BigDecimal secondNumber)
         {
             if (secondNumber > mainNumber)
@@ -273,6 +303,7 @@ namespace Common
             return new BigDecimal(newMainPart, newDecimalPart, leftZeros, mainNumber.decimalCountPrecision);
 
         }
+
         public static BigDecimal operator *(BigDecimal mainNumber, BigDecimal secondNumber)
         {
             BigInteger newMainPart = 0;
@@ -376,7 +407,170 @@ namespace Common
 
         public static BigDecimal operator /(BigDecimal mainNumber, BigDecimal secondNumber)
         {
-            throw new NotImplementedException();
+            AssertBigDecimalsHaveSamePrecision(mainNumber, secondNumber);
+
+            BigInteger newMainPart = 0;
+            BigInteger newFractionPart = 0;
+            int newLeftZeroCount = 0;
+
+            int precision = mainNumber.decimalCountPrecision;
+
+            if (mainNumber == secondNumber)
+            {
+                return new BigDecimal(1, 0, 0, precision);
+            }
+
+            BigInteger mainPart1 = mainNumber.MainPart;
+            BigInteger mainPart2 = secondNumber.MainPart;
+
+            BigInteger fractionPart1 = mainNumber.DecimalPart;
+            BigInteger fractionPart2 = secondNumber.DecimalPart;
+
+            string mainPart1AsString = mainPart1.ToString();
+            string mainPart2AsString = mainPart2.ToString();
+
+            string fractionPart1AsString = fractionPart1.ToString();
+            for (int i = 0; i < mainNumber.DecimalLeftZeros; i++)
+            {
+                fractionPart1AsString = "0" + fractionPart1AsString;
+            }
+            string fractionPart2AsString = fractionPart2.ToString();
+
+            int fractionDigits1 = mainNumber.DecimalLeftZeros + fractionPart1AsString.Length;
+            int fractionDigits2 = secondNumber.DecimalLeftZeros + fractionPart2AsString.Length;
+
+            StringBuilder fullNumberBuilder1 = new StringBuilder();
+            StringBuilder fullNumberBuilder2 = new StringBuilder();
+
+            bool ready = false;
+            int x10 = 0;
+
+            fullNumberBuilder1.Append(mainPart1AsString);
+            fullNumberBuilder2.Append(mainPart2AsString);
+
+            if (secondNumber.DecimalPart > 0)
+            {
+                BigInteger decimalPart2 = fractionPart2;
+                if (secondNumber.DecimalLeftZeros > 0)
+                {
+                    int count = secondNumber.DecimalLeftZeros;
+                    for (int i = 0; i < count; i++)
+                    {
+                        fullNumberBuilder2.Append("0");
+                    }
+                    x10 += secondNumber.DecimalLeftZeros;
+                }
+
+                fullNumberBuilder2.Append(decimalPart2.ToString());
+                x10 += decimalPart2.ToString().Length;
+            }
+
+            string num2AsString = fullNumberBuilder2.ToString();
+
+            int index = 0;
+            int commaPlace = 0;
+
+            BigInteger fullNumber2 = BigInteger.Parse(num2AsString);
+
+            BigInteger answer = 0;
+            BigInteger currentToDivide = mainPart1;
+
+            bool isFirstCycle = true;
+            int mainSize = 0;
+
+            while (!ready)
+            {
+                BigInteger division = currentToDivide / fullNumber2;
+                if (isFirstCycle)
+                {
+                    isFirstCycle = false;
+                    mainSize = division.ToString().Length;
+                }
+                if (division > 0)
+                {
+                    answer *= 10;
+                    answer += division;
+
+                    currentToDivide -= fullNumber2 * division;
+                    if (currentToDivide == 0 && (index >= fractionPart1AsString.Length || index >= precision))
+                    {
+                        ready = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    answer *= 10;
+                }
+
+                if (index < fractionPart1AsString.Length && fractionPart1 > 0)
+                {
+                    currentToDivide *= 10;
+                    BigInteger toAdd = BigInteger.Parse(fractionPart1AsString[index].ToString());
+                    currentToDivide += toAdd;
+                }
+                else
+                {
+                    currentToDivide *= 10;
+                }
+
+                index++;
+                if (index >= precision)
+                {
+                    ready = true;
+                    break;
+                }
+            }
+
+            string asnwerAsString = answer.ToString();
+            string fractionPartAsString = "";
+
+            if (mainNumber < secondNumber)
+            {
+                newMainPart = 0;
+                fractionPartAsString = asnwerAsString;
+                if (fractionPartAsString != string.Empty)
+                {
+                    newFractionPart = BigInteger.Parse(fractionPartAsString);
+                }
+                else
+                {
+                    newFractionPart = 0;
+                }
+            }
+            else
+            {
+                newMainPart = BigInteger.Parse(asnwerAsString.Substring(0, mainSize));
+                fractionPartAsString = asnwerAsString.Substring(mainSize);
+                if (fractionPartAsString != string.Empty)
+                {
+                    newFractionPart = BigInteger.Parse(fractionPartAsString);
+                }
+                else
+                {
+                    newFractionPart = 0;
+                }
+            }
+
+            if (mainNumber < secondNumber)
+            {
+                int x10Diff = secondNumber.MainPart.ToString().Length - mainNumber.MainPart.ToString().Length;
+                if (x10Diff > 0)
+                {
+                    newLeftZeroCount += x10Diff;
+                }
+            }
+
+            if (fractionPartAsString != string.Empty)
+            {
+                while (fractionPartAsString[0] == '0')
+                {
+                    newLeftZeroCount++;
+                    fractionPartAsString = fractionPartAsString.Substring(1);
+                }
+            }
+
+            return new BigDecimal(newMainPart, newFractionPart, newLeftZeroCount, precision);
         }
 
         private static void AssertBigDecimalsHaveSamePrecision(BigDecimal bigDecimal1, BigDecimal bigDecimal2)
@@ -387,27 +581,5 @@ namespace Common
             }
         }
 
-        private BigInteger UpScaleDecimalPart(int digitsNeeded = 0)
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(this.DecimalPart.ToString());
-            int upscaleCount = this.decimalCountPrecision - this.DecimalLeftZeros - stringBuilder.Length;
-
-            if (digitsNeeded != 0)
-            {
-                upscaleCount = digitsNeeded - stringBuilder.Length;
-                if (upscaleCount < 0)
-                {
-                    throw new Exception();
-                }
-            }
-
-            for (int i = 0; i < upscaleCount; i++)
-            {
-                stringBuilder.Append("0");
-            }
-
-            return BigInteger.Parse(stringBuilder.ToString());
-        }
     }
 }
