@@ -28,5 +28,6 @@ Challenge 27: -59231
 Challenge 28: 669171001
 Challenge 29: 9183
 Challenge 30: 443839
+Challenge 31: 73682
 Challenge 48: 9110846700
 Challenge 67: 7273
