@@ -244,6 +244,15 @@ namespace Testing
         }
 
         [Test]
+        public void Test26WithBigDecimal()
+        {
+            var challenge = new Challenge26WithBigDecimal();
+            var result = challenge.Solve();
+
+            Assert.That(result, Is.EqualTo(983));
+        }
+
+        [Test]
         public void Test48()
         {
             var challenge = new Challenge48();

@@ -554,7 +554,7 @@ namespace Common
 
             if (mainNumber < secondNumber)
             {
-                int x10Diff = secondNumber.MainPart.ToString().Length - mainNumber.MainPart.ToString().Length;
+                int x10Diff = index - fractionPartAsString.Length;
                 if (x10Diff > 0)
                 {
                     newLeftZeroCount += x10Diff;

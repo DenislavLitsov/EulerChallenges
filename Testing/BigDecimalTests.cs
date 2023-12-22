@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Numerics;
 
 namespace Testing
 {
@@ -568,6 +567,41 @@ namespace Testing
 
             division = a / b;
             Assert.That(division == c);
+
+            a = new BigDecimal(2, 0, 0, 1000);
+            b = new BigDecimal(16, 0, 0, 1000);
+            c = new BigDecimal(0, 125, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(2, 15, 0, 1000);
+            b = new BigDecimal(16, 0, 0, 1000);
+            c = new BigDecimal(0, 134375, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(2, 15, 2, 1000);
+            b = new BigDecimal(16, 0, 0, 1000);
+            c = new BigDecimal(0, 12509375, 0, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(2, 15, 1, 1000);
+            b = new BigDecimal(32, 0, 0, 1000);
+            c = new BigDecimal(0, 6296875, 1, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
+
+            a = new BigDecimal(2, 0, 0, 1000);
+            b = new BigDecimal(1000, 0, 0, 1000);
+            c = new BigDecimal(0, 2, 2, 1000);
+
+            division = a / b;
+            Assert.That(division == c);
         }
 
         [Test]
@@ -585,6 +619,16 @@ namespace Testing
             sw.Stop();
 
             Assert.That(sw.ElapsedMilliseconds < 500);
+        }
+
+
+        [Test]
+        public void F02_TestChallengeUsingBigDecimal()
+        {
+            var challenge = new Challenge26WithBigDecimal();
+            var result = challenge.Solve();
+
+            Assert.That(result, Is.EqualTo(983));
         }
     }
 }
