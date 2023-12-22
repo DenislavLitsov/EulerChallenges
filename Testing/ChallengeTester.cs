@@ -253,6 +253,15 @@ namespace Testing
         }
 
         [Test]
+        public void Test27()
+        {
+            var challenge = new Challenge27();
+            var result = challenge.Solve();
+
+            Assert.That(result, Is.EqualTo(-59231));
+        }
+
+        [Test]
         public void Test48()
         {
             var challenge = new Challenge48();
