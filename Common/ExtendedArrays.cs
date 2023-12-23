@@ -34,12 +34,70 @@ namespace Common
                 Console.WriteLine(item);
             }
         }
+        public static void Print(this IEnumerable<decimal> list)
+        {
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+        }
         public static void Print(this IEnumerable<string> list)
         {
             foreach (var item in list)
             {
                 Console.WriteLine(item);
             }
+        }
+
+        public static int Product(this IEnumerable<int> list)
+        {
+            int result = 1;
+            foreach (var item in list)
+            {
+                result *= item;
+            }
+
+            return result;
+        }
+        public static long Product(this IEnumerable<long> list)
+        {
+            long result = 1;
+            foreach (var item in list)
+            {
+                result *= item;
+            }
+
+            return result;
+        }
+        public static double Product(this IEnumerable<double> list)
+        {
+            double result = 1;
+            foreach (var item in list)
+            {
+                result *= item;
+            }
+
+            return result;
+        }
+        public static float Product(this IEnumerable<float> list)
+        {
+            float result = 1;
+            foreach (var item in list)
+            {
+                result *= item;
+            }
+
+            return result;
+        }
+        public static decimal Product(this IEnumerable<decimal> list)
+        {
+            decimal result = 1;
+            foreach (var item in list)
+            {
+                result *= item;
+            }
+
+            return result;
         }
 
         public static IEnumerable<int> DeepCopy(this IEnumerable<int> list)
