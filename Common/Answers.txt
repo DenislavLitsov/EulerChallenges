@@ -35,5 +35,6 @@ Challenge 34: 40730
 Challenge 35: 55
 Challenge 36: 872187
 Challenge 37: 748317
+Challenge 38: 932718654
 Challenge 48: 9110846700
 Challenge 67: 7273
