@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 
 namespace Common
 {
@@ -151,33 +152,14 @@ namespace Common
             return newList;
         }
 
-        public static string Stringify(this List<char> list)
-        {
-            string res = "";
-            list.ForEach((char c) => { res += c; });
-
-            return res;
-        }
-
         public static string Stringify(this IEnumerable<char> list)
         {
-            string res = "";
-            foreach (char c in list)
-            {
-                res += c;
-            }
-
+            string res = new string(list.ToArray());
             return res;
         }
-
         public static string Stringify(this char[] list)
         {
-            string res = "";
-            foreach (char c in list)
-            {
-                res += c;
-            }
-
+            string res = new string(list);
             return res;
         }
 
