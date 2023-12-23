@@ -24,7 +24,7 @@ namespace ChallengeExecutor.Challenges.Challenge23
             var abundantNumbers = this.GetAllAbundantNumbers().ToList();
 
             var allPossibleCombinations = this.AllIntegersThatCanBeMadeFromAbundantNumbers(abundantNumbers);
-            allPossibleCombinations.Print();
+            //allPossibleCombinations.Print();
 
             List<long> allNonCombinationInts = new List<long>();
             for (long i = 1; i < TheoreticalLimit; i++)
