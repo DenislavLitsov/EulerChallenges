@@ -16,6 +16,8 @@ namespace ChallengeExecutor.Challenges
 
         public T Solve()
         {
+            this.Setup();
+
             this.stopwatch = Stopwatch.StartNew();
             var res = this.SolveImplementation();
             stopwatch.Stop();
@@ -32,5 +34,9 @@ namespace ChallengeExecutor.Challenges
         }
 
         protected abstract T SolveImplementation();
+
+        protected virtual void Setup()
+        {
+        }
     }
 }

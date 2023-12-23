@@ -31,5 +31,6 @@ Challenge 30: 443839
 Challenge 31: 73682
 Challenge 32: 45228
 Challenge 33: 100
+Challenge 34: 40730
 Challenge 48: 9110846700
 Challenge 67: 7273

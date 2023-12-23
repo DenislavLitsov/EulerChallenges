@@ -128,6 +128,37 @@ namespace Common
             return result;
         }
 
+        public static int Factorial(this int number)
+        {
+            int result = 1;
+            for (int i = number; i > 0; i--)
+            {
+                result *= i;
+            }
+
+            return result;
+        }
+        public static long Factorial(this long number)
+        {
+            long result = 1;
+            for (long i = number; i > 0; i--)
+            {
+                result *= i;
+            }
+
+            return result;
+        }
+        public static BigInteger Factorial(this BigInteger number)
+        {
+            BigInteger result = 1;
+            for (BigInteger i = number; i > 0; i--)
+            {
+                result *= i;
+            }
+
+            return result;
+        }
+
         public static BigInteger RemoveRightZeros(this BigInteger integer)
         {
             BigInteger result = integer;
