@@ -159,6 +159,47 @@ namespace Common
             return result;
         }
 
+
+        public static bool IsPandigital(this long number)
+        {
+            string numberAsString = number.ToString();
+            for (int j = 0; j < numberAsString.Length; j++)
+            {
+                if (numberAsString.Contains(((char)(j + 49))) == false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        public static bool IsPandigital(this int number)
+        {
+            string numberAsString = number.ToString();
+            for (int j = 0; j < numberAsString.Length; j++)
+            {
+                if (numberAsString.Contains(((char)(j + 49))) == false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        public static bool IsPandigital(this BigInteger number)
+        {
+            string numberAsString = number.ToString();
+            for (int j = 0; j < numberAsString.Length; j++)
+            {
+                if (numberAsString.Contains(((char)(j + 49))) == false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public static BigInteger RemoveRightZeros(this BigInteger integer)
         {
             BigInteger result = integer;
