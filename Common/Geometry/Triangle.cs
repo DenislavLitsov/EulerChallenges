@@ -17,7 +17,7 @@
         {
             get
             {
-                return (this.A*this.A) + (this.B*this.B) == (this.C*this.C);
+                return (this.A * this.A) + (this.B * this.B) == (this.C * this.C);
             }
         }
     }
