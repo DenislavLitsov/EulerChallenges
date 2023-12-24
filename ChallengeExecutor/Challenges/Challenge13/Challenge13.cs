@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using ChallengeExecutor.Challenges.Abstractions;
 
 namespace ChallengeExecutor.Challenges.Challenge13
 {

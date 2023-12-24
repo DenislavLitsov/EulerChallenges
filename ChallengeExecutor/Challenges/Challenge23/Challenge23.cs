@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using ChallengeExecutor.Challenges.Abstractions;
+using Common;
 using System.Linq;
 
 namespace ChallengeExecutor.Challenges.Challenge23

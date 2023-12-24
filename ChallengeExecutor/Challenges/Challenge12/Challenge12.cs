@@ -1,4 +1,6 @@
-﻿namespace ChallengeExecutor.Challenges.Challenge12
+﻿using ChallengeExecutor.Challenges.Abstractions;
+
+namespace ChallengeExecutor.Challenges.Challenge12
 {
     public class Challenge12 : BaseChallenge<long>
     {

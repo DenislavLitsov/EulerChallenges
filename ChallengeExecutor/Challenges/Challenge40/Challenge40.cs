@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using ChallengeExecutor.Challenges.Abstractions;
 
 namespace ChallengeExecutor.Challenges.Challenge40
 {

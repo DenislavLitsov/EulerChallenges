@@ -18,6 +18,9 @@
     <None Update="Challenges\Challenge22\names.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Challenges\Challenge42\Names.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Challenges\Challenge67\map.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

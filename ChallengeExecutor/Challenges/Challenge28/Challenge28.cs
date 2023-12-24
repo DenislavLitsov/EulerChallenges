@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using ChallengeExecutor.Challenges.Abstractions;
+using Common;
 using System.Formats.Asn1;
 using System.Security.Cryptography;
 

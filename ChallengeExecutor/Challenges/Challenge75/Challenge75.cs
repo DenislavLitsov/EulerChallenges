@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using ChallengeExecutor.Challenges.Abstractions;
+using Common;
 using Common.Geometry;
 
 namespace ChallengeExecutor.Challenges.Challenge75

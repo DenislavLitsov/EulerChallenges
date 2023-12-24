@@ -1,4 +1,6 @@
-﻿namespace ChallengeExecutor.Challenges.Challenge32
+﻿using ChallengeExecutor.Challenges.Abstractions;
+
+namespace ChallengeExecutor.Challenges.Challenge32
 {
     public class Challenge32 : BaseChallenge<int>
     {

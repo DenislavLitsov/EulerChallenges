@@ -1,7 +1,7 @@
 ﻿using Common;
 using System.Diagnostics;
 
-namespace ChallengeExecutor.Challenges
+namespace ChallengeExecutor.Challenges.Abstractions
 {
     public abstract class BaseChallenge<T>
     {
@@ -16,21 +16,21 @@ namespace ChallengeExecutor.Challenges
 
         public T Solve()
         {
-            this.Setup();
+            Setup();
 
-            this.stopwatch = Stopwatch.StartNew();
-            var res = this.SolveImplementation();
+            stopwatch = Stopwatch.StartNew();
+            var res = SolveImplementation();
             stopwatch.Stop();
 
-            this.Answer = res;
+            Answer = res;
 
-            Console.WriteLine($"Challenge: {this.GetName()}, Answer: {this.Answer.ToString()}. Solved for: {stopwatch.ElapsedMilliseconds}ms");
-            return this.Answer;
+            Console.WriteLine($"Challenge: {GetName()}, Answer: {Answer.ToString()}. Solved for: {stopwatch.ElapsedMilliseconds}ms");
+            return Answer;
         }
 
         protected long GetTotalElapsedMiliseconds()
         {
-            return this.stopwatch.ElapsedMilliseconds;
+            return stopwatch.ElapsedMilliseconds;
         }
 
         protected abstract T SolveImplementation();

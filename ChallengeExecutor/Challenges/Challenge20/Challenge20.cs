@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using ChallengeExecutor.Challenges.Abstractions;
+using Common;
 using System.Numerics;
 
 namespace ChallengeExecutor.Challenges.Challenge20

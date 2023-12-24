@@ -1,4 +1,6 @@
-﻿namespace ChallengeExecutor.Challenges.Challenge17
+﻿using ChallengeExecutor.Challenges.Abstractions;
+
+namespace ChallengeExecutor.Challenges.Challenge17
 {
     public class Challenge17 : BaseChallenge<int>
     {

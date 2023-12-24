@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using ChallengeExecutor.Challenges.Abstractions;
+using Common;
 using System.Runtime.CompilerServices;
 
 namespace ChallengeExecutor.Challenges.Challenge41
