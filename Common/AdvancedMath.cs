@@ -159,13 +159,12 @@ namespace Common
             return result;
         }
 
-
         public static bool IsPandigital(this long number)
         {
             string numberAsString = number.ToString();
             for (int j = 0; j < numberAsString.Length; j++)
             {
-                if (numberAsString.Contains(((char)(j + 49))) == false)
+                if (numberAsString.Contains(((char)(j + 48))) == false)
                 {
                     return false;
                 }
@@ -178,7 +177,7 @@ namespace Common
             string numberAsString = number.ToString();
             for (int j = 0; j < numberAsString.Length; j++)
             {
-                if (numberAsString.Contains(((char)(j + 49))) == false)
+                if (numberAsString.Contains(((char)(j + 48))) == false)
                 {
                     return false;
                 }
@@ -191,7 +190,7 @@ namespace Common
             string numberAsString = number.ToString();
             for (int j = 0; j < numberAsString.Length; j++)
             {
-                if (numberAsString.Contains(((char)(j + 49))) == false)
+                if (numberAsString.Contains(((char)(j + 48))) == false)
                 {
                     return false;
                 }

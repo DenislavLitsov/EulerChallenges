@@ -28,6 +28,7 @@ using ChallengeExecutor.Challenges.Challenge39;
 using ChallengeExecutor.Challenges.Challenge40;
 using ChallengeExecutor.Challenges.Challenge41;
 using ChallengeExecutor.Challenges.Challenge42;
+using ChallengeExecutor.Challenges.Challenge43;
 using ChallengeExecutor.Challenges.Challenge48;
 using ChallengeExecutor.Challenges.Challenge75;
 using Common;
@@ -39,7 +40,7 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            var challenge = new Challenge42();
+            var challenge = new Challenge43();
             challenge.Solve();
         }
     }
