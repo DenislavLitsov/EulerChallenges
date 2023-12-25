@@ -2,17 +2,17 @@
 {
     public abstract class BaseSequenceGenerator
     {
-        protected List<int> _CachedNumbers = null;
+        protected List<long> _CachedNumbers = null;
 
-        public abstract int CalculateNumberAtExactIndex(int index);
+        public abstract long CalculateNumberAtExactIndex(int index);
 
         public abstract int GetMaximaValidIndex();
 
-        public virtual List<int> GetNumberSequence(int startIndex, int endIndex)
+        public virtual List<long> GetNumberSequence(int startIndex, int endIndex)
         {
             this.AssertMaxSequenceIndex(endIndex);
 
-            List<int> generatedNumbers = new List<int>();
+            List<long> generatedNumbers = new List<long>();
 
             for (int currIndex = startIndex; currIndex <= endIndex; currIndex++)
             {
@@ -24,7 +24,9 @@
 
         public virtual void CacheSequence(int startCacheIndex, int endCacheIndex)
         {
-            this._CachedNumbers = new List<int>();
+            this.AssertMaxSequenceIndex(endCacheIndex - startCacheIndex);
+
+            this._CachedNumbers = new List<long>(endCacheIndex - startCacheIndex);
             this._CachedNumbers = this.GetNumberSequence(startCacheIndex, endCacheIndex);
         }
 
@@ -33,7 +35,7 @@
             this.CacheSequence(0, this.GetMaximaValidIndex());
         }
 
-        public bool IsPartOfCachedSequence(int number)
+        public bool ContainsInCachedSequence(long number)
         {
             int index = this._CachedNumbers.BinarySearch(number);
             if (index >= 0)
@@ -49,13 +51,13 @@
         /// </summary>
         /// <param name="number"></param>
         /// <returns>Returns -10 if not found</returns>
-        public int GetIndexInCachedSquence(int number)
+        public int GetIndexInCachedSquence(long number)
         {
             int index = this._CachedNumbers.BinarySearch(number);
             return index;
         }
 
-        public int GetCachedValue(int index)
+        public long GetCachedValue(int index)
         {
             return this._CachedNumbers[index];
         }

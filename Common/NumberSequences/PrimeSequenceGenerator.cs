@@ -11,12 +11,12 @@ namespace Common.NumberSequences
             this.CacheSequence(startCacheIndex, endCacheIndex);
         }
 
-        public override int CalculateNumberAtExactIndex(int index)
+        public override long CalculateNumberAtExactIndex(int index)
         {
             return this.GetCachedValue(index);
         }
 
-        public override List<int> GetNumberSequence(int startIndex, int endIndex)
+        public override List<long> GetNumberSequence(int startIndex, int endIndex)
         {
             this.AssertMaxSequenceIndex(endIndex);
 
@@ -32,7 +32,7 @@ namespace Common.NumberSequences
         {
             this.AssertMaxSequenceIndex(endCacheIndex);
 
-            this._CachedNumbers = new List<int>();
+            this._CachedNumbers = new List<long>();
             int oneMil = 1000000;
             int milStart = startCacheIndex / oneMil;
             int milEnd = endCacheIndex / oneMil;

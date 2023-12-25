@@ -1,5 +1,4 @@
 ﻿using Common;
-using Common.NumberSequences;
 using System;
 
 namespace Sandbox
@@ -8,15 +7,15 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
-            using (StreamReader sr= new StreamReader("Data/Primes/Primes_105.txt"))
+            for (long index = 0; index < long.MaxValue; index++)
             {
-                var line = sr.ReadLine();
-                Console.WriteLine(line.Split(',').Length);
+                long result = index * (index + 1) / 2;
+                if (result < 0)
+                {
+                    Console.WriteLine($"Index: {index}, value: {result}");
+                    break;
+                }
             }
-
-            int theoreticalAll = (105 * Constants.OneMilion) + 97565;
-
-            PrimeSequenceGenerator primeSequenceGenerator = new PrimeSequenceGenerator(0, 105097565);
         }
     }
 }

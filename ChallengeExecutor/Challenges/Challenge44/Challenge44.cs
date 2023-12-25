@@ -4,7 +4,7 @@ using Common.NumberSequences;
 
 namespace ChallengeExecutor.Challenges.Challenge44
 {
-    public class Challenge44 : BaseChallenge<int>
+    public class Challenge44 : BaseChallenge<long>
     {
         private PentagonalSequenceGenerator _PentagonalSquenceGenerator;
 
@@ -19,9 +19,9 @@ namespace ChallengeExecutor.Challenges.Challenge44
             this._PentagonalSquenceGenerator.CacheSequence(0, this._PentagonalSquenceGenerator.GetMaximaValidIndex());
         }
 
-        protected override int SolveImplementation()
+        protected override long SolveImplementation()
         {
-            int bestD = int.MaxValue;
+            long bestD = int.MaxValue;
             for (int index1 = 1; index1 < this._PentagonalSquenceGenerator.GetMaximaValidIndex(); index1++)
             {
                 for (int index2 = 1; index2 < this._PentagonalSquenceGenerator.GetMaximaValidIndex(); index2++)
@@ -29,13 +29,13 @@ namespace ChallengeExecutor.Challenges.Challenge44
                     if (index1 == index2)
                         continue;
 
-                    int pentagonal1 = this._PentagonalSquenceGenerator.GetCachedValue(index1);
-                    int pentagonal2 = this._PentagonalSquenceGenerator.GetCachedValue(index2);
+                    long pentagonal1 = this._PentagonalSquenceGenerator.GetCachedValue(index1);
+                    long pentagonal2 = this._PentagonalSquenceGenerator.GetCachedValue(index2);
 
-                    int pentagonalSum = pentagonal1 + pentagonal2;
-                    int pentagonalSubstraction = Math.Abs(pentagonal1 - pentagonal2);
-                    if (this._PentagonalSquenceGenerator.IsPartOfCachedSequence(pentagonalSum) &&
-                        this._PentagonalSquenceGenerator.IsPartOfCachedSequence(pentagonalSubstraction) &&
+                    long pentagonalSum = pentagonal1 + pentagonal2;
+                    long pentagonalSubstraction = Math.Abs(pentagonal1 - pentagonal2);
+                    if (this._PentagonalSquenceGenerator.ContainsInCachedSequence(pentagonalSum) &&
+                        this._PentagonalSquenceGenerator.ContainsInCachedSequence(pentagonalSubstraction) &&
                         pentagonalSubstraction < bestD)
                     {
                         bestD = pentagonalSubstraction;

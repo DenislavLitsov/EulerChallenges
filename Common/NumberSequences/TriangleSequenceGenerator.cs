@@ -4,17 +4,18 @@ namespace Common.NumberSequences
 {
     public class TriangleSequenceGenerator : BaseSequenceGenerator
     {
-        public override int CalculateNumberAtExactIndex(int index)
+        public override long CalculateNumberAtExactIndex(int index)
         {
             this.AssertMaxSequenceIndex(index);
-            int result = index * (index + 1) / 2;
+            long result = index * (index + 1) / 2;
 
             return result;
         }
 
         public override int GetMaximaValidIndex()
         {
-            return 46340;
+            // Max index is: 3037000499 but List cannot support bigger than 2147483591
+            return 2147483591;
         }
     }
 }

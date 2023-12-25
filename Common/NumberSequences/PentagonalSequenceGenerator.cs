@@ -4,17 +4,17 @@ namespace Common.NumberSequences
 {
     public class PentagonalSequenceGenerator : BaseSequenceGenerator
     {
-        public override int CalculateNumberAtExactIndex(int index)
+        public override long CalculateNumberAtExactIndex(int index)
         {
             this.AssertMaxSequenceIndex(index);
-            int result = index * (3 * index - 1) / 2;
+            long result = index * (3 * index - 1) / 2;
 
             return result;
         }
 
         public override int GetMaximaValidIndex()
         {
-            return 26755;
+            return 1753413056;
         }
     }
 }
