@@ -12,12 +12,9 @@ namespace Common.NumberSequences
             return result;
         }
 
-        protected override void AssertMaxSequenceIndex(int index)
+        public override int GetMaximaValidIndex()
         {
-            if (index > Constants.MaximalTriangleIndex)
-            {
-                throw new OverflowException($"Integer overflow at index: {index}");
-            }
+            return 46340;
         }
     }
 }

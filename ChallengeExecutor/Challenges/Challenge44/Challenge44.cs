@@ -16,15 +16,15 @@ namespace ChallengeExecutor.Challenges.Challenge44
         protected override void Setup()
         {
             this._PentagonalSquenceGenerator = new PentagonalSequenceGenerator();
-            this._PentagonalSquenceGenerator.CacheSequence(0, Constants.MaximalPentagonalIndex);
+            this._PentagonalSquenceGenerator.CacheSequence(0, this._PentagonalSquenceGenerator.GetMaximaValidIndex());
         }
 
         protected override int SolveImplementation()
         {
             int bestD = int.MaxValue;
-            for (int index1 = 1; index1 < Constants.MaximalPentagonalIndex; index1++)
+            for (int index1 = 1; index1 < this._PentagonalSquenceGenerator.GetMaximaValidIndex(); index1++)
             {
-                for (int index2 = 1; index2 < Constants.MaximalPentagonalIndex; index2++)
+                for (int index2 = 1; index2 < this._PentagonalSquenceGenerator.GetMaximaValidIndex(); index2++)
                 {
                     if (index1 == index2)
                         continue;

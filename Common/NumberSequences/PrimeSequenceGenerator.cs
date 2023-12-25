@@ -75,12 +75,9 @@ namespace Common.NumberSequences
             }
         }
 
-        protected override void AssertMaxSequenceIndex(int index)
+        public override int GetMaximaValidIndex()
         {
-            if (index > Constants.MaximalPrimeIndex)
-            {
-                throw new OverflowException($"Integer overflow at index: {index}");
-            }
+            return 105097565;
         }
     }
 }

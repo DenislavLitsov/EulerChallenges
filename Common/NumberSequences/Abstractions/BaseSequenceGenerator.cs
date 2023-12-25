@@ -6,6 +6,8 @@
 
         public abstract int CalculateNumberAtExactIndex(int index);
 
+        public abstract int GetMaximaValidIndex();
+
         public virtual List<int> GetNumberSequence(int startIndex, int endIndex)
         {
             this.AssertMaxSequenceIndex(endIndex);
@@ -24,6 +26,11 @@
         {
             this._CachedNumbers = new List<int>();
             this._CachedNumbers = this.GetNumberSequence(startCacheIndex, endCacheIndex);
+        }
+
+        public void CacheAll()
+        {
+            this.CacheSequence(0, this.GetMaximaValidIndex());
         }
 
         public bool IsPartOfCachedSequence(int number)
@@ -53,6 +60,12 @@
             return this._CachedNumbers[index];
         }
 
-        protected abstract void AssertMaxSequenceIndex(int index);
+        protected void AssertMaxSequenceIndex(int index)
+        {
+            if (index > this.GetMaximaValidIndex())
+            {
+                throw new OverflowException($"Integer overflow at index: {index}");
+            }
+        }
     }
 }
