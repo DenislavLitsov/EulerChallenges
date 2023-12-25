@@ -7,7 +7,7 @@ namespace Common.NumberSequences
         public override long CalculateNumberAtExactIndex(int index)
         {
             this.AssertMaxSequenceIndex(index);
-            long result = index * (3 * index - 1) / 2;
+            long result = (long)index * (3 * (long)index - 1) / 2;
 
             return result;
         }
