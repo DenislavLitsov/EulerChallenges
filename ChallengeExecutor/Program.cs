@@ -29,6 +29,7 @@ using ChallengeExecutor.Challenges.Challenge40;
 using ChallengeExecutor.Challenges.Challenge41;
 using ChallengeExecutor.Challenges.Challenge42;
 using ChallengeExecutor.Challenges.Challenge43;
+using ChallengeExecutor.Challenges.Challenge44;
 using ChallengeExecutor.Challenges.Challenge48;
 using ChallengeExecutor.Challenges.Challenge75;
 using Common;
@@ -40,16 +41,8 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            List<int> ints = new List<int>();
-            for (int i = 1; i < 10; i++)
-            {
-                ints.Add(i);
-            }
-
-            Console.WriteLine(ints.BinarySearch(55555));
-
-            //var challenge = new Challenge43();
-            //challenge.Solve();
+            var challenge = new Challenge44();
+            challenge.Solve();
         }
     }
 }

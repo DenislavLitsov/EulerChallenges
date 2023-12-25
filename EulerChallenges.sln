@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChallengeExecutor", "Challe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing.csproj", "{FF381118-2CAD-4EE6-825E-5C131E9845BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{D9DB30BD-1F2B-4081-8857-B45BC01C7897}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FF381118-2CAD-4EE6-825E-5C131E9845BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF381118-2CAD-4EE6-825E-5C131E9845BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF381118-2CAD-4EE6-825E-5C131E9845BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9DB30BD-1F2B-4081-8857-B45BC01C7897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9DB30BD-1F2B-4081-8857-B45BC01C7897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9DB30BD-1F2B-4081-8857-B45BC01C7897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9DB30BD-1F2B-4081-8857-B45BC01C7897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

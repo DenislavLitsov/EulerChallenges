@@ -41,5 +41,6 @@ Challenge 40: 210
 Challenge 41: 7652413
 Challenge 42: 162
 Challenge 43: 16695334890
+Challenge 44: 5482660
 Challenge 48: 9110846700
 Challenge 67: 7273
