@@ -2,7 +2,7 @@
 {
     public abstract class BaseSequenceGenerator
     {
-        private List<int> _CachedNumbers = null;
+        protected List<int> _CachedNumbers = null;
 
         public abstract int GetNumberAtExactIndex(int index);
 
