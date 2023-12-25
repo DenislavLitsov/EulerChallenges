@@ -14,12 +14,11 @@ namespace NumberGenerator
             {
                 if (i.IsPrime())
                 {
-                    Console.WriteLine(  );
                     primes.Add((int)i);
 
                     if (primes.Count % 1000000 == 0)
                     {
-                        //WritePrimes(primes, milionCount);
+                        WritePrimes(primes, milionCount);
                         primes = new List<int>();
                         milionCount++;
                         Console.WriteLine($"Curr index: {i}, left: {int.MaxValue - i}, Found primes: {milionCount}");
