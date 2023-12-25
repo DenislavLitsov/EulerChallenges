@@ -40,8 +40,16 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            var challenge = new Challenge43();
-            challenge.Solve();
+            List<int> ints = new List<int>();
+            for (int i = 1; i < 10; i++)
+            {
+                ints.Add(i);
+            }
+
+            Console.WriteLine(ints.BinarySearch(55555));
+
+            //var challenge = new Challenge43();
+            //challenge.Solve();
         }
     }
 }
