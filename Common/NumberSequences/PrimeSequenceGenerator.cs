@@ -1,5 +1,6 @@
 ﻿using Common.NumberSequences.Abstractions;
 using System;
+using System.Reflection;
 
 namespace Common.NumberSequences
 {
@@ -10,13 +11,15 @@ namespace Common.NumberSequences
             this.CacheSequence(startCacheIndex, endCacheIndex);
         }
 
-        public override int GetNumberAtExactIndex(int index)
+        public override int CalculateNumberAtExactIndex(int index)
         {
-            return this._CachedNumbers[index];
+            return this.GetCachedValue(index);
         }
 
         public override List<int> GetNumberSequence(int startIndex, int endIndex)
         {
+            this.AssertMaxSequenceIndex(endIndex);
+
             var result = this._CachedNumbers
                 .Skip(startIndex)
                 .Take(endIndex)
@@ -27,6 +30,8 @@ namespace Common.NumberSequences
 
         public override void CacheSequence(int startCacheIndex, int endCacheIndex)
         {
+            this.AssertMaxSequenceIndex(endCacheIndex);
+
             this._CachedNumbers = new List<int>();
             int oneMil = 1000000;
             int milStart = startCacheIndex / oneMil;
@@ -67,6 +72,14 @@ namespace Common.NumberSequences
                         }
                     }
                 }
+            }
+        }
+
+        protected override void AssertMaxSequenceIndex(int index)
+        {
+            if (index > Constants.MaximalPrimeIndex)
+            {
+                throw new OverflowException($"Integer overflow at index: {index}");
             }
         }
     }

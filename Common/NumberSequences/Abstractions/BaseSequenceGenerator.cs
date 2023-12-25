@@ -4,15 +4,17 @@
     {
         protected List<int> _CachedNumbers = null;
 
-        public abstract int GetNumberAtExactIndex(int index);
+        public abstract int CalculateNumberAtExactIndex(int index);
 
         public virtual List<int> GetNumberSequence(int startIndex, int endIndex)
         {
+            this.AssertMaxSequenceIndex(endIndex);
+
             List<int> generatedNumbers = new List<int>();
 
-            for (int currIndex = startIndex; currIndex < endIndex; currIndex++)
+            for (int currIndex = startIndex; currIndex <= endIndex; currIndex++)
             {
-                generatedNumbers.Add(this.GetNumberAtExactIndex(currIndex));
+                generatedNumbers.Add(this.CalculateNumberAtExactIndex(currIndex));
             }
 
             return generatedNumbers;
@@ -45,5 +47,12 @@
             int index = this._CachedNumbers.BinarySearch(number);
             return index;
         }
+
+        public int GetCachedValue(int index)
+        {
+            return this._CachedNumbers[index];
+        }
+
+        protected abstract void AssertMaxSequenceIndex(int index);
     }
 }
