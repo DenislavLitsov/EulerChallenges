@@ -46,4 +46,6 @@ Challenge 45: 1533776805
 Challenge 46: 5777
 Challenge 47: 134043
 Challenge 48: 9110846700
+Challenge 49: 296962999629
+Challenge 50: 997651
 Challenge 67: 7273

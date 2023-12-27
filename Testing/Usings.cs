@@ -47,6 +47,7 @@ global using ChallengeExecutor.Challenges.Challenge45;
 global using ChallengeExecutor.Challenges.Challenge46;
 global using ChallengeExecutor.Challenges.Challenge47;
 global using ChallengeExecutor.Challenges.Challenge48;
+global using ChallengeExecutor.Challenges.Challenge49;
 global using ChallengeExecutor.Challenges.Challenge50;
 global using ChallengeExecutor.Challenges.Challenge67;
 global using Common;
