@@ -45,7 +45,7 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            var challenge = new Challenge47();
+            var challenge = new Challenge50();
             challenge.Solve();
         }
     }

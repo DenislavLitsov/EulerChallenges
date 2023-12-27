@@ -450,6 +450,14 @@ namespace Testing
             Assert.That(result, Is.EqualTo("9110846700"));
         }
 
+        [Test]
+        public void Test50()
+        {
+            var challenge = new Challenge50();
+            var result = challenge.Solve();
+
+            Assert.That(result, Is.EqualTo(997651));
+        }
 
         [Test]
         public void Test67()
