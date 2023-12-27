@@ -433,6 +433,15 @@ namespace Testing
         }
 
         [Test]
+        public void Test47()
+        {
+            var challenge = new Challenge47();
+            var result = challenge.Solve();
+
+            Assert.That(result, Is.EqualTo(134043));
+        }
+
+        [Test]
         public void Test48()
         {
             var challenge = new Challenge48();
