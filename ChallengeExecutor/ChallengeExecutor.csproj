@@ -12,16 +12,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Challenges\Challenge18\map.txt">
+    <None Update="Challenges\Challenges1To50\Challenge18\map.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Challenges\Challenge22\names.txt">
+    <None Update="Challenges\Challenges1To50\Challenge22\names.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Challenges\Challenge42\Names.txt">
+    <None Update="Challenges\Challenges1To50\Challenge42\Names.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Challenges\Challenge67\map.txt">
+    <None Update="Challenges\Challenges51to100\Challenge67\map.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
