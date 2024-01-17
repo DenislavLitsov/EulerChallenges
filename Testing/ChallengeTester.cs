@@ -1,6 +1,3 @@
-using ChallengeExecutor.Challenges.Challenges51to100.Challenge52;
-using System.Numerics;
-
 namespace Testing
 {
     public class Tests
@@ -477,6 +474,16 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(142857));
+        }
+
+
+        [Test]
+        public void Test53()
+        {
+            var challenge = new Challenge53();
+            var result = challenge.Solve();
+
+            Assert.That(result, Is.EqualTo(4075));
         }
 
         [Test]

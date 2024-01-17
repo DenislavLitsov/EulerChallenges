@@ -48,6 +48,8 @@ global using ChallengeExecutor.Challenges.Challenges1To50.Challenge47;
 global using ChallengeExecutor.Challenges.Challenges1To50.Challenge48;
 global using ChallengeExecutor.Challenges.Challenges1To50.Challenge49;
 global using ChallengeExecutor.Challenges.Challenges1To50.Challenge50;
+global using ChallengeExecutor.Challenges.Challenges51to100.Challenge52;
+global using ChallengeExecutor.Challenges.Challenges51to100.Challenge53;
 global using ChallengeExecutor.Challenges.Challenges51to100.Challenge67;
 global using Common;
 global using NUnit.Framework;

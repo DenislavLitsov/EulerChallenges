@@ -209,5 +209,24 @@ namespace Common
 
             return result;
         }
+
+        public static BigInteger GetBigCombination(long totalNumbers, long totalTakeNumbers)
+        {
+            if (totalTakeNumbers > totalNumbers)
+            {
+                throw new Exception("totalTakeNumbers cannot be bigger than totalNumbers");
+            }
+
+            BigInteger n = totalNumbers;
+            BigInteger r = totalTakeNumbers;
+            BigInteger nMinusR = n - r;
+
+            BigInteger factorialN = n.Factorial();
+            BigInteger factorialR = r.Factorial();
+            BigInteger factorialNMinusR = nMinusR.Factorial();
+
+            BigInteger result = factorialN / (factorialR * factorialNMinusR);
+            return result;
+        }
     }
 }
