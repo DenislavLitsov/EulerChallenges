@@ -24,7 +24,7 @@
 
         public virtual void CacheSequence(int startCacheIndex, int endCacheIndex)
         {
-            this.AssertMaxSequenceIndex(endCacheIndex - startCacheIndex);
+            this.AssertMaxSequenceIndex(endCacheIndex);
 
             this._CachedNumbers = new List<long>(endCacheIndex - startCacheIndex);
             this._CachedNumbers = this.GetNumberSequence(startCacheIndex, endCacheIndex);
