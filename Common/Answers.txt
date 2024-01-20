@@ -51,4 +51,5 @@ Challenge 50: 997651
 Challenge 51: 121313
 Challenge 52: 142857
 Challenge 53: 4075
+Challenge 53: 376
 Challenge 67: 7273

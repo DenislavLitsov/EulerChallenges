@@ -475,7 +475,6 @@ namespace Testing
             Assert.That(result, Is.EqualTo(121313));
         }
 
-
         [Test]
         public void Test52()
         {
@@ -485,7 +484,6 @@ namespace Testing
             Assert.That(result, Is.EqualTo(142857));
         }
 
-
         [Test]
         public void Test53()
         {
@@ -493,6 +491,15 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(4075));
+        }
+
+        [Test]
+        public void Test54()
+        {
+            var challenge = new Challenge54();
+            var result = challenge.Solve();
+
+            Assert.That(result, Is.EqualTo(376));
         }
 
         [Test]
