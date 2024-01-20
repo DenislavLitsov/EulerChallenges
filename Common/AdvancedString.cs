@@ -4,11 +4,16 @@ namespace Common
 {
     public static class AdvancedString
     {
-
         public static IEnumerable<string> GetAllPossibleCombinations(this string main)
         {
             var res = Combinate(main, 0, "", new List<int>());
             return res;
+        }
+
+        public static bool IsPalindrome(this string main)
+        {
+            var reversed = new String(main.Reverse().ToArray());
+            return main == reversed;
         }
 
         private static IEnumerable<string> Combinate(string charsToCombine, int charIndex, string currentBuiltString, List<int> usedIndexes)
