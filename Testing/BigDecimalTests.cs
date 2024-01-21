@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using ChallengeExecutor.Challenges.Challenges1To50.Challenge26;
+using Common.AdvancedMath;
 
 namespace Testing
 {

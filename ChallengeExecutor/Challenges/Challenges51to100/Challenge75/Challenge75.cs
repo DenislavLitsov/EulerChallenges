@@ -1,6 +1,6 @@
 ﻿using ChallengeExecutor.Challenges.Abstractions;
-using Common;
-using Common.Geometry;
+using Common.AdvancedMath;
+using Common.AdvancedMath.Geometry;
 
 namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge75
 {

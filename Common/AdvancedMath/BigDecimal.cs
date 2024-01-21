@@ -4,7 +4,7 @@ using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Common
+namespace Common.AdvancedMath
 {
     public class BigDecimal : IComparable, IEquatable<BigDecimal>
     {
@@ -16,9 +16,9 @@ namespace Common
 
         public BigDecimal(BigInteger mainPart, BigInteger decimalPart, int decimalLeftZeros, int decimalCountPrecision)
         {
-            this.MainPart = mainPart;
-            this.DecimalPart = decimalPart;
-            this.DecimalLeftZeros = decimalLeftZeros;
+            MainPart = mainPart;
+            DecimalPart = decimalPart;
+            DecimalLeftZeros = decimalLeftZeros;
             this.decimalCountPrecision = decimalCountPrecision;
         }
 
@@ -28,7 +28,7 @@ namespace Common
             {
                 StringBuilder sb = new StringBuilder(MainPart.ToString());
                 sb.Append(",");
-                for (int i = 0; i < this.DecimalLeftZeros; i++)
+                for (int i = 0; i < DecimalLeftZeros; i++)
                 {
                     sb.Append("0");
                 }
@@ -40,8 +40,8 @@ namespace Common
         private BigInteger UpScaleDecimalPart(int digitsNeeded = 0)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(this.DecimalPart.ToString());
-            int upscaleCount = this.decimalCountPrecision - this.DecimalLeftZeros - stringBuilder.Length;
+            stringBuilder.Append(DecimalPart.ToString());
+            int upscaleCount = decimalCountPrecision - DecimalLeftZeros - stringBuilder.Length;
 
             if (digitsNeeded != 0)
             {
@@ -62,7 +62,7 @@ namespace Common
 
         public bool Equals(BigDecimal? other)
         {
-            return this.CompareTo(other) == 0;
+            return CompareTo(other) == 0;
         }
 
         public int CompareTo(object? obj)
@@ -76,9 +76,9 @@ namespace Common
 
             AssertBigDecimalsHaveSamePrecision(this, secondBigDecimal);
 
-            if (this.MainPart == secondBigDecimal.MainPart)
+            if (MainPart == secondBigDecimal.MainPart)
             {
-                var comparePart1 = this.UpScaleDecimalPart();
+                var comparePart1 = UpScaleDecimalPart();
                 var comparePart2 = secondBigDecimal.UpScaleDecimalPart();
 
                 if (comparePart1 == comparePart2)
@@ -96,7 +96,7 @@ namespace Common
             }
             else
             {
-                if (this.MainPart > secondBigDecimal.MainPart)
+                if (MainPart > secondBigDecimal.MainPart)
                 {
                     return 1;
                 }

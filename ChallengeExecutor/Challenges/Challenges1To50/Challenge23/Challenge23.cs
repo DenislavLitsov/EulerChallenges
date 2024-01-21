@@ -2,6 +2,7 @@
 using Common;
 using System.Linq;
 using ChallengeExecutor.Challenges.Challenges1To50.Challenge23;
+using Common.AdvancedMath;
 
 namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge23
 {

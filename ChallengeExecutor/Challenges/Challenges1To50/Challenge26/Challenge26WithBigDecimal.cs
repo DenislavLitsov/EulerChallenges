@@ -1,5 +1,5 @@
 ﻿using ChallengeExecutor.Challenges.Abstractions;
-using Common;
+using Common.AdvancedMath;
 using System.Numerics;
 
 namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge26

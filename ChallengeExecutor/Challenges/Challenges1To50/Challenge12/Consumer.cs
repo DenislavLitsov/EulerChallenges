@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.AdvancedMath;
 using Common.ProducerConsumer;
 
 namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge12

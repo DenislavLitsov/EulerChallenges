@@ -1,4 +1,4 @@
-﻿namespace Common.Geometry
+﻿namespace Common.AdvancedMath.Geometry
 {
     public class Triangle
     {
@@ -17,7 +17,7 @@
         {
             get
             {
-                return (this.A * this.A) + (this.B * this.B) == (this.C * this.C);
+                return A * A + B * B == C * C;
             }
         }
     }

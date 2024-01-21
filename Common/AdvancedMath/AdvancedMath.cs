@@ -1,6 +1,7 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 
-namespace Common
+namespace Common.AdvancedMath
 {
     public static class AdvancedMath
     {
