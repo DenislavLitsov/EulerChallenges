@@ -1,5 +1,6 @@
 ﻿using Common.AdvancedMath;
 using Common.Cards.GameEngines.Utility;
+using System.Numerics;
 
 namespace Testing
 {
@@ -11,8 +12,8 @@ namespace Testing
             var fraction = new NumberFraction(1, 2);
             var sum = fraction + 1;
 
-            Assert.That(sum.Number, Is.EqualTo(3));
-            Assert.That(sum.Denominator, Is.EqualTo(2));
+            Assert.That(sum.Number, Is.EqualTo(new BigInteger(3)));
+            Assert.That(sum.Denominator, Is.EqualTo(new BigInteger(2)));
         }
 
         [Test]
@@ -24,8 +25,8 @@ namespace Testing
             var next = new NumberFraction(1) / under1;
             var result = next + 1;
 
-            Assert.That(result.Number, Is.EqualTo(7));
-            Assert.That(result.Denominator, Is.EqualTo(5));
+            Assert.That(result.Number, Is.EqualTo(new BigInteger(7)));
+            Assert.That(result.Denominator, Is.EqualTo(new BigInteger(5)));
         }
 
         [Test]
@@ -38,8 +39,8 @@ namespace Testing
             next = new NumberFraction(1) / next;
             var result = next + 1;
 
-            Assert.That(result.Number, Is.EqualTo(17));
-            Assert.That(result.Denominator, Is.EqualTo(12));
+            Assert.That(result.Number, Is.EqualTo(new BigInteger(17)));
+            Assert.That(result.Denominator, Is.EqualTo(new BigInteger(12)));
         }
 
         [Test]
@@ -53,8 +54,8 @@ namespace Testing
             next = new NumberFraction(1) / next;
             var result = next + 1;
 
-            Assert.That(result.Number, Is.EqualTo(41));
-            Assert.That(result.Denominator, Is.EqualTo(29));
+            Assert.That(result.Number, Is.EqualTo(new BigInteger(41)));
+            Assert.That(result.Denominator, Is.EqualTo(new BigInteger(29)));
         }
     }
 }
