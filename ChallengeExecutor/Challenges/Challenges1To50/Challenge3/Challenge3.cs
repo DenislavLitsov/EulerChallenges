@@ -10,11 +10,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge3
         {
         }
 
-        public override string GetName()
-        {
-            return "Challenge3";
-        }
-
         protected override long SolveImplementation()
         {
             long number = 600851475143;

@@ -17,11 +17,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge15
         {
         }
 
-        public override string GetName()
-        {
-            return "Challenge15";
-        }
-
         protected override BigInteger SolveImplementation()
         {
             BigInteger a = 1;

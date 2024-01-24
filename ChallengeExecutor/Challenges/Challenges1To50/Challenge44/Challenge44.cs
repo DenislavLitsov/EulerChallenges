@@ -10,11 +10,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge44
 
         private const int MaxIndex = Constants.OneMilion * 60;
 
-        public override string GetName()
-        {
-            return "Challenge44";
-        }
-
         protected override void Setup()
         {
             this._PentagonalSquenceGenerator = new PentagonalSequenceGenerator();

@@ -6,11 +6,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge26
 {
     public class Challenge26WithBigDecimal : BaseChallenge<int>
     {
-        public override string GetName()
-        {
-            return "Challenge26WithBigDecimal";
-        }
-
         protected override int SolveImplementation()
         {
             int longestRepeatString = 0;

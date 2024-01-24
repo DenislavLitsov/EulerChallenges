@@ -12,7 +12,10 @@ namespace ChallengeExecutor.Challenges.Abstractions
 
         public T Answer { get; private set; }
 
-        public abstract string GetName();
+        public string GetName()
+        {
+            return this.GetType().Name;
+        }
 
         public T Solve()
         {

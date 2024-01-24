@@ -7,11 +7,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge48
 {
     public class Challenge48 : BaseChallenge<string>
     {
-        public override string GetName()
-        {
-            return "Challenge48";
-        }
-
         protected override string SolveImplementation()
         {
             BigInteger totalNumber = 0;

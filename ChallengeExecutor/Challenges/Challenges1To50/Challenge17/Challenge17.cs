@@ -40,11 +40,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge17
             nameTable.Add(1000, "onethousand");
         }
 
-        public override string GetName()
-        {
-            return "Challenge17";
-        }
-
         protected override int SolveImplementation()
         {
             int totalCharCount = 0;

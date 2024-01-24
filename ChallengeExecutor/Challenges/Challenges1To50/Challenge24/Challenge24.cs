@@ -7,11 +7,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge24
     {
         private static readonly long[] PossibleNumbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-    public override string GetName()
-        {
-            return "Challenge24";
-        }
-
         protected override long SolveImplementation()
         {
             List<long> possibleBuildNumbers = new List<long>();

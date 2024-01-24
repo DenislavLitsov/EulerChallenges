@@ -5,11 +5,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge16
 {
     public class Challenge16 : BaseChallenge<int>
     {
-        public override string GetName()
-        {
-            return "Challenge 16";
-        }
-
         protected override int SolveImplementation()
         {
             BigInteger bigIntegerValue = 1;

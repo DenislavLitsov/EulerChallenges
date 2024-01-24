@@ -7,11 +7,6 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge53
 {
     public class Challenge53 : BaseChallenge<int>
     {
-        public override string GetName()
-        {
-            return "Challenge53";
-        }
-
         protected override int SolveImplementation()
         {
             int result = 0;

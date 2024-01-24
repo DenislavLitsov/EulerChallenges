@@ -8,11 +8,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge50
     {
         PrimeSequenceGenerator _PrimeSequenceGenerator;
 
-        public override string GetName()
-        {
-            return "Challenge50";
-        }
-
         protected override void Setup()
         {
             this._PrimeSequenceGenerator = new PrimeSequenceGenerator(0, Constants.OneMilion);

@@ -12,11 +12,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge45
         private PentagonalSequenceGenerator _PentagonalSequenceGenerator;
         private HexagonalSequenceGenerator _HexagonalSequenceGenerator;
 
-        public override string GetName()
-        {
-            return "Challenge45";
-        }
-
         protected override void Setup()
         {
             this._TriangleSequenceGenerator = new TriangleSequenceGenerator();

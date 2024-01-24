@@ -5,11 +5,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge12
 {
     public class Challenge12 : BaseChallenge<long>
     {
-        public override string GetName()
-        {
-            return "Challenge12";
-        }
-
         protected override long SolveImplementation()
         {
             var producer = new Producer();

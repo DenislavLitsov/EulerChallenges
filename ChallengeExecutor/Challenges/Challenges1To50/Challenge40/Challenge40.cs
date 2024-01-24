@@ -5,11 +5,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge40
 {
     public class Challenge40 : BaseChallenge<int>
     {
-        public override string GetName()
-        {
-            return "Challenge40";
-        }
-
         protected override int SolveImplementation()
         {
             var numberString = this.buildNumber();

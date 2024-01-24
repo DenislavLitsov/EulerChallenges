@@ -8,11 +8,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge34
     {
         private readonly Dictionary<char, long> _Factorials = new Dictionary<char, long>();
 
-        public override string GetName()
-        {
-            return "Challenge34";
-        }
-
         protected override void Setup()
         {
             base.Setup();

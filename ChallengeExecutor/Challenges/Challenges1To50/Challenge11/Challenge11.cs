@@ -11,11 +11,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge11
             grid = numbers.Split("\r\n").ToList();
         }
 
-        public override string GetName()
-        {
-            return "Challenge11";
-        }
-
         protected override long SolveImplementation()
         {
             int maxValue = 0;

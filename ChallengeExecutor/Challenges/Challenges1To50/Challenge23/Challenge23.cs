@@ -17,11 +17,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge23
     {
         private const long TheoreticalLimit = 28123;
 
-        public override string GetName()
-        {
-            return "Challenge23";
-        }
-
         protected override long SolveImplementation()
         {
             var abundantNumbers = this.GetAllAbundantNumbers().ToList();

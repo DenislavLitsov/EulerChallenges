@@ -10,11 +10,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge2
         {
         }
 
-        public override string GetName()
-        {
-            return "Challenge2";
-        }
-
         protected override int SolveImplementation()
         {
             List<int> fibonacciNumbers = new List<int>();

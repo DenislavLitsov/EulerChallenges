@@ -6,11 +6,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge31
     {
         private readonly int[] PossibleNumbers = new int[] { 1, 2, 5, 10, 20, 50, 100, 200 };
 
-        public override string GetName()
-        {
-            return "Challenge31";
-        }
-
         protected override int SolveImplementation()
         {
             var count = this.GetPossibleCount(200, 0);

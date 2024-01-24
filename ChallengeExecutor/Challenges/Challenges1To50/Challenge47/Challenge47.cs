@@ -11,11 +11,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge47
 {
     public class Challenge47 : BaseChallenge<long>
     {
-        public override string GetName()
-        {
-            return "Challenge47";
-        }
-
         protected override long SolveImplementation()
         {
             for (long currNumber = 647; currNumber < long.MaxValue; currNumber++)

@@ -6,11 +6,6 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge55
 {
     public class Challenge55 : BaseChallenge<int>
     {
-        public override string GetName()
-        {
-            return "Challenge55";
-        }
-
         protected override int SolveImplementation()
         {
             int totalLychrelNumberCount = 0;

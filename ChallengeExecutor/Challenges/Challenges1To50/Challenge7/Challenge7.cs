@@ -10,11 +10,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge7
         {
         }
 
-        public override string GetName()
-        {
-            return "Challenge7";
-        }
-
         protected override long SolveImplementation()
         {
             List<long> primes = new List<long>();

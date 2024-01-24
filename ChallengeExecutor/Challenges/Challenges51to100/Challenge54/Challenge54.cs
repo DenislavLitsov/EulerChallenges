@@ -21,11 +21,6 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge54
             this.GameHands = new List<List<Hand>>();
         }
 
-        public override string GetName()
-        {
-            return "Challenge54";
-        }
-
         protected override string GetFilePath()
         {
             return "Challenges/Challenges51to100/Challenge54/Poker.txt";
