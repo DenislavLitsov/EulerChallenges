@@ -4,11 +4,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge32
 {
     public class Challenge32 : BaseChallenge<int>
     {
-        public override string GetName()
-        {
-            return "Challenge32";
-        }
-
         protected override int SolveImplementation()
         {
             List<int> products = new List<int>();

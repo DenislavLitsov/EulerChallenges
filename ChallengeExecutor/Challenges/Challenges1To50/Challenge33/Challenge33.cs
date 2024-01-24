@@ -5,11 +5,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge33
 {
     public class Challenge33 : BaseChallenge<decimal>
     {
-        public override string GetName()
-        {
-            return "Challenge33";
-        }
-
         protected override decimal SolveImplementation()
         {
             List<decimal> possibleA = new List<decimal>();

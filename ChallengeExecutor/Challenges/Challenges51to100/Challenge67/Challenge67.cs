@@ -9,11 +9,6 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge67
             return "Challenges/Challenges51To100/Challenge67/map.txt";
         }
 
-        public override string GetName()
-        {
-            return "Challenge67";
-        }
-
         protected override long SolveImplementation()
         {
             InitAStarImplementation();

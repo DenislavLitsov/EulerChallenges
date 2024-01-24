@@ -6,11 +6,6 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge58
 {
     public class Challenge58 : BaseChallenge<long>
     {
-        public override string GetName()
-        {
-            return "Challenge58";
-        }
-
         protected override long SolveImplementation()
         {
             var generator = new TwoDSpiralNumberGenerator(1);

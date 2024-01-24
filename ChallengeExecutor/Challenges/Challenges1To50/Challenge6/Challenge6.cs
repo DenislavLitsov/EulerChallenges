@@ -8,11 +8,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge6
         {
         }
 
-        public override string GetName()
-        {
-            return "Challenge6";
-        }
-
         protected override long SolveImplementation()
         {
             long sumOfSquares = 0;

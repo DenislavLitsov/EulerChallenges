@@ -8,11 +8,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge5
         {
         }
 
-        public override string GetName()
-        {
-            return "Challenge5";
-        }
-
         protected override long SolveImplementation()
         {
             for (int i = 1; i < int.MaxValue; i++)

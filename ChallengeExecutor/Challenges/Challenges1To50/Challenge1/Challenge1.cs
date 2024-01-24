@@ -10,11 +10,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge1
         {
         }
 
-        public override string GetName()
-        {
-            return "Challenge1";
-        }
-
         protected override int SolveImplementation()
         {
             for (int i = 0; i < 1000; i++)

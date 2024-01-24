@@ -7,11 +7,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge42
         private List<string> _Names;
         private List<int> _TValues;
 
-        public override string GetName()
-        {
-            return "Challenge42";
-        }
-
         protected override string GetFilePath()
         {
             return "Challenges/Challenges1To50/Challenge42/Names.txt";

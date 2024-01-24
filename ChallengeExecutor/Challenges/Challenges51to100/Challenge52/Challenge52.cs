@@ -8,11 +8,6 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge52
 {
     public class Challenge52 : BaseChallenge<long>
     {
-        public override string GetName()
-        {
-            return "Challenge52";
-        }
-
         protected override long SolveImplementation()
         {
             bool found = false;

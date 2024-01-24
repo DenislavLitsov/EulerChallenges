@@ -14,11 +14,6 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge51
         private int prevMaxLength = 0;
         private Dictionary<int, IEnumerable<IEnumerable<int>>> possibleChanges;
 
-        public override string GetName()
-        {
-            return "Challenge51";
-        }
-
         protected override void Setup()
         {
             this._Generator = new PrimeSequenceGenerator(0, Constants.OneMilion);

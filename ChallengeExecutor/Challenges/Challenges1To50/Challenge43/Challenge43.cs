@@ -14,11 +14,6 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge43
         List<string> list6;
         List<string> list7;
 
-        public override string GetName()
-        {
-            return "Challenge43";
-        }
-
         protected override void Setup()
         {
             this.list1 = new List<string>();
