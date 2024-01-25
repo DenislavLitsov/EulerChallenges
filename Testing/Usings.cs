@@ -56,6 +56,7 @@ global using ChallengeExecutor.Challenges.Challenges51to100.Challenge55;
 global using ChallengeExecutor.Challenges.Challenges51to100.Challenge56;
 global using ChallengeExecutor.Challenges.Challenges51to100.Challenge57;
 global using ChallengeExecutor.Challenges.Challenges51to100.Challenge58;
+global using ChallengeExecutor.Challenges.Challenges51to100.Challenge59;
 global using ChallengeExecutor.Challenges.Challenges51to100.Challenge67;
 global using ChallengeExecutor.Challenges.Challenges51to100.Challenge81;
 global using ChallengeExecutor.Challenges.Challenges51to100.Challenge82;

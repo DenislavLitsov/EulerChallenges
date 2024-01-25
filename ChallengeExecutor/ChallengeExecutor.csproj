@@ -24,6 +24,9 @@
     <None Update="Challenges\Challenges51to100\Challenge54\Poker.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Challenges\Challenges51to100\Challenge59\cypher.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Challenges\Challenges51to100\Challenge67\map.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
