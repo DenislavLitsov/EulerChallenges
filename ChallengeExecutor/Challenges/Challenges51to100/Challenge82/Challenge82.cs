@@ -30,9 +30,9 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge82
             var yCount = 80;
             long best = long.MaxValue;
 
+            var map = this.LoadMap();
             for (int y = 0; y < yCount; y++)
             {
-                var map = this.LoadMap();
                 this.pathFinding = new PathFinding82(map, new Position() { X = 0, Y = y }, best);
                 var weight = this.pathFinding.GetFastestWeight();
                 if (best > weight)
