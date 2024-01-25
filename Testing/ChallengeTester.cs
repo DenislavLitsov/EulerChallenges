@@ -546,5 +546,32 @@ namespace Testing
 
             Assert.That(result, Is.EqualTo(7273));
         }
+
+        [Test]
+        public void Test81()
+        {
+            var challenge1 = new Challenge81(false);
+            var challenge2 = new Challenge81(true);
+
+            var result1 = challenge1.Solve();
+            var result2 = challenge2.Solve();
+
+            Assert.That(result1, Is.EqualTo(2427));
+            Assert.That(result2, Is.EqualTo(427337));
+        }
+
+        [Test]
+        public void Test82()
+        {
+            var challenge = new Challenge82();
+            Assert.That(challenge.Solve(), Is.EqualTo(260324));
+        }
+
+        [Test]
+        public void Test83()
+        {
+            var challenge = new Challenge83();
+            Assert.That(challenge.Solve(), Is.EqualTo(425185));
+        }
     }
 }

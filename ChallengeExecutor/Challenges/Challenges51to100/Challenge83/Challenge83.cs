@@ -1,26 +1,22 @@
 ﻿using ChallengeExecutor.Challenges.Abstractions;
-using Common.Maps;
+using ChallengeExecutor.Challenges.Challenges51to100.Challenge81;
 using Common.Maps.PathFinding;
+using Common.Maps;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge81
+namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge83
 {
-    public class Challenge81 : FileReadingChallenge<long>
+    public class Challenge83 : FileReadingChallenge<long>
     {
-        private readonly bool fullVersion;
-
-        private PathFinding pathFinding;
-
-        public Challenge81(bool fullVersion)
-        {
-            this.fullVersion = fullVersion;
-        }
+        private PathFinding83 pathFinding;
 
         protected override string GetFilePath()
         {
-            if (this.fullVersion)
-                return @"Challenges\Challenges51to100\Challenge81\FullMatrix.txt";
-
-            return @"Challenges\Challenges51to100\Challenge81\TestMatrix.txt";
+            return @"Challenges\Challenges51to100\Challenge83\FullMatrix.txt";
         }
 
         protected override void Setup()
@@ -45,9 +41,8 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge81
                 x = 0;
             }
 
-            this.pathFinding = new PathFinding(map, new Position() { X = 0, Y = 0 }, false);
+            this.pathFinding = new PathFinding83(map, new Position() { X = 0, Y = 0 });
         }
-
         protected override long SolveImplementation()
         {
             var smallest = this.pathFinding.GetFastestWeight();
