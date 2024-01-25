@@ -59,6 +59,17 @@
             var res = this.map.Count - 1;
             return res;
         }
+       
+        public bool AssertPositin(Position position)
+        {
+            if (position.X >= 0 && position.Y >= 0
+                && position.Y <= this.GetMaxY() && position.X <= this.GetMaxXAtY((int)position.Y))
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         public List<T> GetRow(int y)
         {

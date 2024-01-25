@@ -9,7 +9,7 @@
 
         private IEnumerable<WeightedNode> NodePath { get; set; }
 
-        public int GetTotalSum()
+        public long GetTotalSum()
         {
             var sum = this.NodePath.Sum(x => x.Weight);
             return sum;

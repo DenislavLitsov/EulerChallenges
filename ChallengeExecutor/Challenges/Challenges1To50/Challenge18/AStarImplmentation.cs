@@ -1,16 +1,18 @@
 ﻿using Common.Maps;
 using Common.Maps.PathFinding;
 using Common.Maps.PathFinding.AStar;
+using Common.Maps.PathFinding.AStar.Directions;
 
 namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge18
 {
     public class AStarImplmentation : AStarAlgorithm
     {
-        public AStarImplmentation(Map<WeightedNode> map) : base(map, new Position { X = 0, Y = 0 }, true)
+        public AStarImplmentation(Map<WeightedNode> map) : base(map, new Position { X = 0, Y = 0 }, true,
+            new IDirection[] { new DownDirection(), new DiagonalDownRight()})
         {
         }
 
-        public int GetTotalWeight()
+        public long GetTotalWeight()
         {
             CalculateWeights();
 
@@ -22,31 +24,9 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge18
             return maxWeight;
         }
 
-        protected override IEnumerable<WeightedNode> GetNextPossibleNodes(Position position)
-        {
-            if (position.Y == map.GetMaxY())
-            {
-                return null;
-            }
-
-            var node1 = map.GetNode(position.X, position.Y + 1);
-            var node2 = map.GetNode(position.X + 1, position.Y + 1);
-
-            List<WeightedNode> nodes = new List<WeightedNode>();
-            nodes.Add(node1);
-            nodes.Add(node2);
-
-            return nodes;
-        }
-
         protected override bool IsEnd(Position position)
         {
-            if (position.Y == map.GetMaxY())
-            {
-                return true;
-            }
-
-            return false;
+            return position.Y == this.map.GetMaxY();
         }
     }
 }
