@@ -582,5 +582,12 @@ namespace Testing
             var challenge = new Challenge83();
             Assert.That(challenge.Solve(), Is.EqualTo(425185));
         }
+
+        [Test]
+        public void Test97()
+        {
+            var challenge = new Challenge97();
+            Assert.That(challenge.Solve(), Is.EqualTo("8739992577"));
+        }
     }
 }
