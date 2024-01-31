@@ -51,6 +51,15 @@ namespace Common.AdvancedMath
             }
         }
 
+        public double CalculateValue()
+        {
+            var doubleNumber = (double)this.Number;
+            var doubleDenominaotor = (double)this.Denominator;
+            var result = doubleNumber / doubleDenominaotor;
+
+            return result;
+        }
+
         public static NumberFraction operator +(NumberFraction mainNumber, NumberFraction secondNumber)
         {
             if (mainNumber.Denominator != secondNumber.Denominator)
