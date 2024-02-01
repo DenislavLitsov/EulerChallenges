@@ -42,6 +42,9 @@
     <None Update="Challenges\Challenges51to100\Challenge83\FullMatrix.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Challenges\Challenges51to100\Challenge99\numbers.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
