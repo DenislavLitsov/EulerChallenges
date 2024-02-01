@@ -93,7 +93,7 @@ namespace Testing
         {
             var challenge = new Challenge10();
             var result = challenge.Solve();
-            
+
             Assert.That(result, Is.EqualTo(142913828922));
         }
 
@@ -547,6 +547,27 @@ namespace Testing
             Assert.That(result, Is.EqualTo(129448));
         }
 
+        public void Test60()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test61()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test62()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
         [Test]
         public void Test63()
         {
@@ -554,6 +575,27 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(49));
+        }
+
+        public void Test64()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test65()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test66()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
         }
 
         [Test]
@@ -565,6 +607,27 @@ namespace Testing
             Assert.That(result, Is.EqualTo(7273));
         }
 
+        public void Test68()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test69()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test70()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
         [Test]
         public void Test71()
         {
@@ -572,6 +635,69 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(428570));
+        }
+
+        public void Test72()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test73()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test74()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test75()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test76()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test77()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test78()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test79()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test80()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
         }
 
         [Test]
@@ -601,11 +727,95 @@ namespace Testing
             Assert.That(challenge.Solve(), Is.EqualTo(425185));
         }
 
+        public void Test84()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test85()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test86()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test87()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test88()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test89()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test90()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test91()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
         [Test]
         public void Test92()
         {
             var challenge = new Challenge92();
             Assert.That(challenge.Solve(), Is.EqualTo(8581146));
+        }
+
+        public void Test93()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test94()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test95()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test96()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
         }
 
         [Test]
@@ -615,11 +825,25 @@ namespace Testing
             Assert.That(challenge.Solve(), Is.EqualTo("8739992577"));
         }
 
+        public void Test98()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
         [Test]
         public void Test99()
         {
             var challenge = new Challenge99();
             Assert.That(challenge.Solve(), Is.EqualTo(709));
+        }
+
+        public void Test100()
+        {
+            throw new NotImplementedException();
+            //var challenge = new Challenge99();
+            //Assert.That(challenge.Solve(), Is.EqualTo(709));
         }
     }
 }
