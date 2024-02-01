@@ -19,7 +19,20 @@ namespace ChallengeExecutor.Challenges.Abstractions
             return stringBuilder.ToString();
         }
 
-        protected List<string> ReadFile()
+        protected IEnumerable<IEnumerable<string>> ReadFileAndSplitLines(string separator)
+        {
+            List<List<string>> result = new List<List<string>>();
+            var file = this.ReadFile();
+            foreach (var item in file)
+            {
+                var splitedLines = item.Split(separator);
+                result.Add(splitedLines.ToList());
+            }
+
+            return result;
+        }
+
+        protected IEnumerable<string> ReadFile()
         {
             List<string> result = new List<string>();
             using (StreamReader sr = new StreamReader(this.GetFilePath()))
