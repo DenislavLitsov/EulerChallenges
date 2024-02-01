@@ -12,7 +12,7 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge82
 {
     public class Challenge82 : FileReadingChallenge<long>
     {
-        private List<string> cachedFile;
+        private IEnumerable<string> cachedFile;
         private PathFinding82 pathFinding;
 
         protected override string GetFilePath()
