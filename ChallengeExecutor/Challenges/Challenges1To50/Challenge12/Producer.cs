@@ -16,10 +16,10 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge12
             Iteration++;
             TriangleNumber += Iteration;
 
-            if (Iteration % 500 == 0)
-            {
-                SafePrint.Print(Iteration.ToString());
-            }
+            //if (Iteration % 500 == 0)
+            //{
+            //    SafePrint.Print(Iteration.ToString());
+            //}
 
             return TriangleNumber;
         }

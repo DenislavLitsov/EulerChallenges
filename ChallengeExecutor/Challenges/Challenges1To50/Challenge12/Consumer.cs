@@ -36,8 +36,8 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge12
                 mutex.WaitOne();
                 biggsetDivision = divisibles;
                 biggestTriangle = item;
-                return true;
                 mutex.ReleaseMutex();
+                return true;
             }
 
             return false;

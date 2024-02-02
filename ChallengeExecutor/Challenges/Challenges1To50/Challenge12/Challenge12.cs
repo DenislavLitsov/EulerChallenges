@@ -10,7 +10,7 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge12
             var producer = new Producer();
             List<Thread> threads = new List<Thread>();
             List<Consumer> consumers = new List<Consumer>();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 8; i++)
             {
                 var consumer = new Consumer(producer);
                 consumers.Add(consumer);

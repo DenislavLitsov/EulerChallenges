@@ -41,7 +41,8 @@ namespace Common.AdvancedMath
 
             res.Add(1);
 
-            for (long i = 2; i < (number / 2) + 1; i++)
+            long max = (number / 2) + 1;
+            for (long i = 2; i < max; i++)
             {
                 if (number % i == 0)
                 {
