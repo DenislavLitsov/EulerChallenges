@@ -554,11 +554,11 @@ namespace Testing
             Assert.That(challenge.Solve(), Is.EqualTo(26033));
         }
 
+        [Test]
         public void Test61()
         {
-            throw new NotImplementedException();
-            //var challenge = new Challenge99();
-            //Assert.That(challenge.Solve(), Is.EqualTo(709));
+            var challenge = new Challenge61();
+            Assert.That(challenge.Solve(), Is.EqualTo(28684));
         }
 
         public void Test62()

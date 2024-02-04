@@ -30,9 +30,39 @@
             this._CachedNumbers = this.GetNumberSequence(startCacheIndex, endCacheIndex);
         }
 
+        /// <summary>
+        /// Values are inclusive
+        /// </summary>
+        /// <param name="minValue">Inclusive</param>
+        /// <param name="maxValue">Inclusive</param>
+        public virtual void CacheSequenceByValues(long minValue, long maxValue)
+        {
+            var cachedValues = new List<long>();
+
+            int index = 0;
+            long currValue = this.CalculateNumberAtExactIndex(index);
+            
+            do
+            {
+                if (currValue >= minValue)
+                    cachedValues.Add(currValue);
+
+                index++;
+                this.AssertMaxSequenceIndex(index);
+                currValue = this.CalculateNumberAtExactIndex(index);
+            } while (currValue <= maxValue);
+
+            this._CachedNumbers = cachedValues;
+        }
+
         public void CacheAll()
         {
             this.CacheSequence(0, this.GetMaximaValidIndex());
+        }
+
+        public IEnumerable<long> GetCachedNumbers()
+        {
+            return this._CachedNumbers;
         }
 
         public bool ContainsInCachedSequence(long number)
