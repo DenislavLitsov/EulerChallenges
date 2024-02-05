@@ -2,7 +2,7 @@ namespace Testing
 {
     public class Tests
     {
-        private const int Max_Miliseconds_PerChallenge = 1000 * 60;
+        private const int Max_Miliseconds_Per_Challenge = 1000 * 60;
 
         [SetUp]
         public void Setup()
@@ -16,7 +16,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(233168));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -26,7 +26,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(4613732));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(6857));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -46,7 +46,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(906609));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -56,7 +56,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(232792560));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -66,7 +66,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(25164150));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -76,7 +76,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(104743));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(23514624000));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -96,7 +96,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(31875000));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -106,7 +106,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(142913828922));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -116,7 +116,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(70600674));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -126,7 +126,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(76576500));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -136,7 +136,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo("5537376230"));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -146,7 +146,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(837799));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -156,7 +156,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result == 137846528820);
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -166,7 +166,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(1366));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -176,7 +176,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(21124));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -186,7 +186,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(1074));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -196,7 +196,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(171));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -206,7 +206,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(648));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -216,7 +216,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(31626));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -226,7 +226,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(871198282));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -236,7 +236,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(4179871));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -246,7 +246,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(2783915460));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -256,7 +256,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(4782));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -266,7 +266,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(983));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -276,7 +276,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(983));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -286,7 +286,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(-59231));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -296,7 +296,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(669171001));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -306,7 +306,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(9183));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -316,7 +316,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(443839));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -326,7 +326,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(73682));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -336,7 +336,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(45228));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -346,7 +346,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(100));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -356,7 +356,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(40730));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -366,7 +366,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(55));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -376,7 +376,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(872187));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -386,7 +386,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(748317));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -396,7 +396,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(932718654));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -406,7 +406,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(840));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -416,7 +416,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(210));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -426,7 +426,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(7652413));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -436,7 +436,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(162));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -446,7 +446,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(16695334890));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -456,7 +456,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(5482660));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -466,7 +466,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(1533776805));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -476,7 +476,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(5777));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -486,7 +486,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(134043));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -496,7 +496,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo("9110846700"));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -506,7 +506,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo("296962999629"));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -516,7 +516,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(997651));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -526,7 +526,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(121313));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -536,7 +536,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(142857));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -546,7 +546,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(4075));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -556,7 +556,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(376));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -566,7 +566,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(249));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -576,7 +576,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(972));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -586,7 +586,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(153));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -596,7 +596,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(26241));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -606,7 +606,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(129448));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -614,7 +614,7 @@ namespace Testing
         {
             var challenge = new Challenge60();
             Assert.That(challenge.Solve(), Is.EqualTo(26033));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -622,15 +622,15 @@ namespace Testing
         {
             var challenge = new Challenge61();
             Assert.That(challenge.Solve(), Is.EqualTo(28684));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
+        [Test]
         public void Test62()
         {
-            throw new NotImplementedException();
-            //var challenge = new Challenge99();
-            //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            var challenge = new Challenge62();
+            Assert.That(challenge.Solve(), Is.EqualTo(127035954683));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -640,7 +640,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(49));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test64()
@@ -648,7 +648,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test65()
@@ -656,7 +656,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test66()
@@ -664,7 +664,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -674,7 +674,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(7273));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test68()
@@ -682,7 +682,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test69()
@@ -690,7 +690,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test70()
@@ -698,7 +698,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -708,7 +708,7 @@ namespace Testing
             var result = challenge.Solve();
 
             Assert.That(result, Is.EqualTo(428570));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test72()
@@ -716,7 +716,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test73()
@@ -724,7 +724,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test74()
@@ -732,7 +732,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test75()
@@ -740,7 +740,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test76()
@@ -748,7 +748,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test77()
@@ -756,7 +756,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test78()
@@ -764,7 +764,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test79()
@@ -772,7 +772,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test80()
@@ -780,7 +780,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            // Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -794,8 +794,8 @@ namespace Testing
 
             Assert.That(result1, Is.EqualTo(2427));
             Assert.That(result2, Is.EqualTo(427337));
-            Assert.That(challenge1.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
-            Assert.That(challenge2.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge1.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
+            Assert.That(challenge2.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -803,7 +803,7 @@ namespace Testing
         {
             var challenge = new Challenge82();
             Assert.That(challenge.Solve(), Is.EqualTo(260324));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -811,7 +811,7 @@ namespace Testing
         {
             var challenge = new Challenge83();
             Assert.That(challenge.Solve(), Is.EqualTo(425185));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test84()
@@ -819,7 +819,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test85()
@@ -827,7 +827,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test86()
@@ -835,7 +835,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test87()
@@ -843,7 +843,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test88()
@@ -851,7 +851,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test89()
@@ -859,7 +859,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test90()
@@ -867,7 +867,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test91()
@@ -875,7 +875,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -883,7 +883,7 @@ namespace Testing
         {
             var challenge = new Challenge92();
             Assert.That(challenge.Solve(), Is.EqualTo(8581146));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test93()
@@ -891,7 +891,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test94()
@@ -899,7 +899,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test95()
@@ -907,7 +907,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test96()
@@ -915,7 +915,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -923,7 +923,7 @@ namespace Testing
         {
             var challenge = new Challenge97();
             Assert.That(challenge.Solve(), Is.EqualTo("8739992577"));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test98()
@@ -931,7 +931,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //   Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         [Test]
@@ -939,7 +939,7 @@ namespace Testing
         {
             var challenge = new Challenge99();
             Assert.That(challenge.Solve(), Is.EqualTo(709));
-            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test100()
@@ -947,7 +947,7 @@ namespace Testing
             throw new NotImplementedException();
             //var challenge = new Challenge99();
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_PerChallenge));
+            //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
     }
 }
