@@ -13,7 +13,7 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge26
 
             BigInteger a = 1;
 
-            int precision = 10000;
+            int precision = 2000;
             for (int i = 0; i < precision; i++)
             {
                 a *= 10;

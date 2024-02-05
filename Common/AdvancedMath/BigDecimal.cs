@@ -16,9 +16,9 @@ namespace Common.AdvancedMath
 
         public BigDecimal(BigInteger mainPart, BigInteger decimalPart, int decimalLeftZeros, int decimalCountPrecision)
         {
-            MainPart = mainPart;
-            DecimalPart = decimalPart;
-            DecimalLeftZeros = decimalLeftZeros;
+            this.MainPart = mainPart;
+            this.DecimalPart = decimalPart;
+            this.DecimalLeftZeros = decimalLeftZeros;
             this.decimalCountPrecision = decimalCountPrecision;
         }
 

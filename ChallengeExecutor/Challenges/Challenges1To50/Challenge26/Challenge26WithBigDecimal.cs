@@ -11,7 +11,7 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge26
             int longestRepeatString = 0;
             BigInteger bestNumber = 0;
 
-            int precision = 10000;
+            int precision = 2000;
             BigDecimal a = new BigDecimal(1, 0, 0, precision);
 
             for (BigInteger i = 7; i < 1000; i++)
