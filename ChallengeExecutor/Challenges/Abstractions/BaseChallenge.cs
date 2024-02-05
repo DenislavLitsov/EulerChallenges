@@ -12,6 +12,14 @@ namespace ChallengeExecutor.Challenges.Abstractions
 
         public T Answer { get; private set; }
 
+        public long GetElapsedMiliseconds
+        {
+            get
+            {
+                return this.stopwatch.ElapsedMilliseconds;
+            }
+        }
+
         public string GetName()
         {
             return this.GetType().Name;
