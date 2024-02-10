@@ -52,16 +52,16 @@ namespace Testing
             Assert.That(generator.CalculateNumberAtExactIndex(5), Is.EqualTo(13));
             Assert.That(generator.CalculateNumberAtExactIndex(6), Is.EqualTo(17));
 
-            Assert.That(generator.GetIndexInCachedSquence(17), Is.EqualTo(6));
-            Assert.That(generator.ContainsInCachedSequence(3), Is.EqualTo(true));
-            Assert.That(generator.ContainsInCachedSequence(4), Is.EqualTo(false));
+            Assert.That(generator.GetIndexInCachedSequence(17), Is.EqualTo(6));
+            Assert.That(generator.ContainedInCachedSequence(3), Is.EqualTo(true));
+            Assert.That(generator.ContainedInCachedSequence(4), Is.EqualTo(false));
 
             generator = new PrimeSequenceGenerator(2, 1000000);
 
-            Assert.That(generator.GetIndexInCachedSquence(7), Is.EqualTo(1));
-            Assert.That(generator.ContainsInCachedSequence(5), Is.EqualTo(true));
-            Assert.That(generator.ContainsInCachedSequence(3), Is.EqualTo(false));
-            Assert.That(generator.ContainsInCachedSequence(4), Is.EqualTo(false));
+            Assert.That(generator.GetIndexInCachedSequence(7), Is.EqualTo(1));
+            Assert.That(generator.ContainedInCachedSequence(5), Is.EqualTo(true));
+            Assert.That(generator.ContainedInCachedSequence(3), Is.EqualTo(false));
+            Assert.That(generator.ContainedInCachedSequence(4), Is.EqualTo(false));
         }
     }
 }

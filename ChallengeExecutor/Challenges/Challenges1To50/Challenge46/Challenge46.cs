@@ -20,7 +20,7 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge46
             long lastPrime = this._PrimeSequenceGenerator.GetCachedValue(maxPrimeIndex-1);
             for (int i = 3; i < lastPrime; i += 2)
             {
-                if (this._PrimeSequenceGenerator.ContainsInCachedSequence(i))
+                if (this._PrimeSequenceGenerator.ContainedInCachedSequence(i))
                     continue;
 
                 bool isWritten = false;

@@ -1,8 +1,11 @@
-﻿namespace Common.NumberSequences.Spirals
+﻿using Common.NumberSequences.Abstractions;
+
+namespace Common.NumberSequences.Spirals
 {
     public class TwoDSpiralNumberGenerator
     {
         private readonly int step;
+
         private long currNumber;
         private long sizeNeededToChangeDirection;
         private long currSideSize;

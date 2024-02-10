@@ -35,8 +35,8 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge44
                     if (pentagonalSubstraction < 0)
                         break;
 
-                    if (this._PentagonalSquenceGenerator.ContainsInCachedSequence(pentagonalSum) &&
-                        this._PentagonalSquenceGenerator.ContainsInCachedSequence(pentagonalSubstraction) &&
+                    if (this._PentagonalSquenceGenerator.ContainedInCachedSequence(pentagonalSum) &&
+                        this._PentagonalSquenceGenerator.ContainedInCachedSequence(pentagonalSubstraction) &&
                         pentagonalSubstraction < bestD)
                     {
                         bestD = pentagonalSubstraction;

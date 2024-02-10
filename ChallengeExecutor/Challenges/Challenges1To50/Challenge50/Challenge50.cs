@@ -34,7 +34,7 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge50
                     if (currNum > Constants.OneMilion)
                         break;
 
-                    if (bestTerms < index && this._PrimeSequenceGenerator.ContainsInCachedSequence(currNum))
+                    if (bestTerms < index && this._PrimeSequenceGenerator.ContainedInCachedSequence(currNum))
                     {
                         bestNum = currNum;
                         bestTerms = index;

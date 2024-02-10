@@ -24,7 +24,7 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge51
         {
             for (int currNumber = 15; currNumber < int.MaxValue; currNumber++)
             {
-                if (this._Generator.ContainsInCachedSequence(currNumber) == false)
+                if (this._Generator.ContainedInCachedSequence(currNumber) == false)
                     continue;
 
                 string currNumberString = currNumber.ToString();
@@ -57,7 +57,7 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge51
                             }
 
                             var newNumber = long.Parse(new string(charList.ToArray()));
-                            var isPrime = this._Generator.ContainsInCachedSequence(newNumber);
+                            var isPrime = this._Generator.ContainedInCachedSequence(newNumber);
                             if (isPrime)
                             {
                                 totalPrimes++;

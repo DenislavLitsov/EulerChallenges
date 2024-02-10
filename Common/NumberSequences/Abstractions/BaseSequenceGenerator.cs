@@ -65,7 +65,7 @@
             return this._CachedNumbers;
         }
 
-        public bool ContainsInCachedSequence(long number)
+        public bool ContainedInCachedSequence(long number)
         {
             int index = this._CachedNumbers.BinarySearch(number);
             if (index >= 0)
@@ -81,7 +81,7 @@
         /// </summary>
         /// <param name="number"></param>
         /// <returns>Returns -10 if not found</returns>
-        public int GetIndexInCachedSquence(long number)
+        public int GetIndexInCachedSequence(long number)
         {
             int index = this._CachedNumbers.BinarySearch(number);
             return index;
