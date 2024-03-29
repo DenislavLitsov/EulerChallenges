@@ -1,5 +1,6 @@
 ﻿using ChallengeExecutor.Challenges.Abstractions;
 using Common;
+using Common.Exceptions;
 
 namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge64
 {

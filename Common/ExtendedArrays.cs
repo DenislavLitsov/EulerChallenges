@@ -2,46 +2,20 @@
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Common
 {
     public static class ExtendedArrays
     {
-        public static void Print(this IEnumerable<int> list)
+        public static void Print<T>(this IEnumerable<T> list) where T : struct
         {
             foreach (var item in list)
             {
                 Console.WriteLine(item);
             }
         }
-        public static void Print(this IEnumerable<long> list)
-        {
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
-        }
-        public static void Print(this IEnumerable<double> list)
-        {
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
-        }
-        public static void Print(this IEnumerable<float> list)
-        {
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
-        }
-        public static void Print(this IEnumerable<decimal> list)
-        {
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
-        }
+
         public static void Print(this IEnumerable<string> list)
         {
             foreach (var item in list)
@@ -101,39 +75,9 @@ namespace Common
             return result;
         }
 
-        public static IEnumerable<int> DeepCopy(this IEnumerable<int> list)
+        public static IEnumerable<T> DeepCopy<T>(this IEnumerable<T> list) where T : struct
         {
-            var newList = new List<int>();
-            foreach (var item in list)
-            {
-                newList.Add(item);
-            }
-
-            return newList;
-        }
-        public static IEnumerable<long> DeepCopy(this IEnumerable<long> list)
-        {
-            var newList = new List<long>();
-            foreach (var item in list)
-            {
-                newList.Add(item);
-            }
-
-            return newList;
-        }
-        public static IEnumerable<double> DeepCopy(this IEnumerable<double> list)
-        {
-            var newList = new List<double>();
-            foreach (var item in list)
-            {
-                newList.Add(item);
-            }
-
-            return newList;
-        }
-        public static IEnumerable<float> DeepCopy(this IEnumerable<float> list)
-        {
-            var newList = new List<float>();
+            var newList = new List<T>();
             foreach (var item in list)
             {
                 newList.Add(item);
@@ -150,6 +94,18 @@ namespace Common
             }
 
             return newList;
+        }
+
+        public static string ConcentrateArray<T>(this IEnumerable<T> list) where T : struct
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (var item in list)
+            {
+                stringBuilder.Append(item.ToString());
+            }
+
+            return stringBuilder.ToString();
         }
 
         public static string Stringify(this IEnumerable<char> list)
