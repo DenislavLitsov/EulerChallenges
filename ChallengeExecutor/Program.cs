@@ -13,7 +13,7 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            var challenge = new Challenge76();
+            var challenge = new Challenge68();
             challenge.Solve();
         }
     }
