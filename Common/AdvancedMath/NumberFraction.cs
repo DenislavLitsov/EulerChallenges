@@ -157,23 +157,28 @@ namespace Common.AdvancedMath
         {
             BigInteger smallerNum = this.Number < this.Denominator ? this.Number : this.Denominator;
 
-            for (int i = 2; i <= smallerNum / 2; i++)
+            for (BigInteger i = smallerNum; i > 1; i--)
             {
                 if (this.Number % i == 0 && this.Denominator % i == 0)
                 {
                     this.Number /= i;
                     this.Denominator /= i;
 
+                    smallerNum = this.Number < this.Denominator ? this.Number : this.Denominator;
+                    if (i > smallerNum)
+                    {
+                        i = smallerNum;
+                    }
                     // Reset the cycle
-                    i = 2;
+                    // i = 2;
                 }
             }
 
-            if (this.Denominator % this.Number == 0)
-            {
-                this.Number /= this.Number;
-                this.Denominator /= this.Number;
-            }
+            //if (this.Denominator % this.Number == 0)
+            //{
+            //    this.Number /= this.Number;
+            //    this.Denominator /= this.Number;
+            //}
         }
 
         /// <summary>

@@ -70,6 +70,55 @@ namespace Common.AdvancedMath
             return res;
         }
 
+        public static BigInteger HighestCommonFactor(this BigInteger number, BigInteger number2)
+        {
+            var smallerNum = number < number2 ? number : number2;
+
+            for (BigInteger i = smallerNum - 1; i > 0; i--)
+            {
+                if (number % i == 0 && number2 % i == 0)
+                {
+                    return i;
+                }
+            }
+
+            return 1;
+        }
+        
+        public static int HighestCommonFactor(this double number, double number2)
+        {
+            int num1 = (int)number;
+            int num2 = (int)number2;
+            var smallerNum = num1 < num2 ? num1 : num2;
+
+            for (int i = smallerNum - 1; i > 0; i--)
+            {
+                if (num1 % i == 0 && num2 % i == 0)
+                {
+                    return i;
+                }
+            }
+
+            return 1;
+        }
+        
+        public static bool HasCommonFactorExcept1(this double number, double number2)
+        {
+            int num1 = (int)number;
+            int num2 = (int)number2;
+            var smallerNum = num1 < num2 ? num1 : num2;
+
+            for (int i = 2; i <= smallerNum; i++)
+            {
+                if (num1 % i == 0 && num2 % i == 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
         public static BigInteger BigPower(this long number, int power)
         {
             if (power == 0)
