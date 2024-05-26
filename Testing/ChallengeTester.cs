@@ -727,12 +727,12 @@ namespace Testing
             Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
+        [Test]
         public void Test74()
         {
-            throw new NotImplementedException();
-            //var challenge = new Challenge99();
-            //Assert.That(challenge.Solve(), Is.EqualTo(709));
-            //Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
+            var challenge = new Challenge74();
+            Assert.That(challenge.Solve(), Is.EqualTo(402));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
 
         public void Test75()

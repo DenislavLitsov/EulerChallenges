@@ -119,6 +119,21 @@ namespace Common.AdvancedMath
             return false;
         }
         
+        public static bool HasCommonFactorExcept1(this int num1, int num2)
+        {
+            var smallerNum = num1 < num2 ? num1 : num2;
+
+            for (int i = 2; i <= smallerNum; i++)
+            {
+                if (num1 % i == 0 && num2 % i == 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
         public static BigInteger BigPower(this long number, int power)
         {
             if (power == 0)

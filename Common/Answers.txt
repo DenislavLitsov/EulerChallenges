@@ -64,6 +64,8 @@ Challenge 63: 49
 Challenge 67: 7273
 Challenge 68: 6531031914842725
 Challenge 71: 428570
+Challenge 73: 7295372
+Challenge 74: 402
 Challenge 81: 427337
 Challenge 82: 260324
 Challenge 83: 425185
