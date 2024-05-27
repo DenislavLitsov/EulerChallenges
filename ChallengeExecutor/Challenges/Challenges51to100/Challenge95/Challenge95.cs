@@ -7,18 +7,22 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge95
     public class Challenge95 : BaseChallenge<int>
     {
         private IEnumerable<int> _longestAmicableChain;
-        private HashSet<int> _usedIntegers;
+        private List<bool> _usedIntegers;
         private int _longestChainCount = 0;
 
         public Challenge95() 
             : base()
         {
-            _usedIntegers = new HashSet<int>();
+            _usedIntegers = new List<bool>();
+            for (int i = 0; i < Constants.OneMilion + 1; i++)
+            {
+                this._usedIntegers.Add(false);
+            }
         }
 
         protected override int SolveImplementation()
         {
-            for (int i = 0; i < Constants.OneMilion; i++)
+            for (int i = 1; i < Constants.OneMilion; i++)
             {
                 if (i % 10000 == 0)
                 {
@@ -53,13 +57,12 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge95
 
         private IEnumerable<int> GetChain(int number, IList<int> currNumbers, bool checkIfNumberIsUsed)
         {
-            this._usedIntegers.;
-            if (checkIfNumberIsUsed && this._usedIntegers.Contains(number))
+            if (this._usedIntegers[number])
             {
                 return null;
             }
 
-            this._usedIntegers.Add(number);
+            this._usedIntegers[number] = true;
             
             int newNum = number.GetAllDivisorsExcludingSameNumber().Sum();
             if (newNum > Constants.OneMilion)

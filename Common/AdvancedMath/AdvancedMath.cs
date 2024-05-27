@@ -41,12 +41,19 @@ namespace Common.AdvancedMath
 
             res.Add(1);
 
-            long max = (number / 2) + 1;
+            //            +1 is needed!!
+            long max = (long)Math.Sqrt(number) + (long)1;
+            bool isNotPrime = max * max != number;
             for (long i = 2; i < max; i++)
             {
-                if (number % i == 0)
+                if (number % i == 0 && isNotPrime)
                 {
                     res.Add(i);
+                    if (isNotPrime)
+                    {
+                        long temp = number / i;
+                        res.Add(temp);
+                    }
                 }
             }
 
@@ -59,11 +66,19 @@ namespace Common.AdvancedMath
 
             res.Add(1);
 
-            for (int i = 2; i < (number / 2) + 1; i++)
+            //            +1 is needed!!
+            int max = (int)Math.Sqrt(number) + 1;
+            bool isNotPrime = max * max != number;
+            for (int i = 2; i < max; i++)
             {
-                if (number % i == 0)
+                if (number % i == 0 && isNotPrime)
                 {
                     res.Add(i);
+                    if (isNotPrime)
+                    {
+                        int temp = number / i;
+                        res.Add(temp);
+                    }
                 }
             }
 
@@ -84,7 +99,7 @@ namespace Common.AdvancedMath
 
             return 1;
         }
-        
+
         public static int HighestCommonFactor(this double number, double number2)
         {
             int num1 = (int)number;
@@ -101,7 +116,7 @@ namespace Common.AdvancedMath
 
             return 1;
         }
-        
+
         public static bool HasCommonFactorExcept1(this double number, double number2)
         {
             int num1 = (int)number;
@@ -118,7 +133,7 @@ namespace Common.AdvancedMath
 
             return false;
         }
-        
+
         public static bool HasCommonFactorExcept1(this int num1, int num2)
         {
             var smallerNum = num1 < num2 ? num1 : num2;
@@ -133,13 +148,14 @@ namespace Common.AdvancedMath
 
             return false;
         }
-        
+
         public static BigInteger BigPower(this long number, int power)
         {
             if (power == 0)
             {
                 return 1;
             }
+
             if (power < 0)
             {
                 throw new NotImplementedException();
@@ -160,6 +176,7 @@ namespace Common.AdvancedMath
             {
                 return 1;
             }
+
             if (power < 0)
             {
                 throw new NotImplementedException();
@@ -180,6 +197,7 @@ namespace Common.AdvancedMath
             {
                 return 1;
             }
+
             if (power < 0)
             {
                 throw new NotImplementedException();
@@ -204,6 +222,7 @@ namespace Common.AdvancedMath
 
             return result;
         }
+
         public static long Factorial(this long number)
         {
             long result = 1;
@@ -214,6 +233,7 @@ namespace Common.AdvancedMath
 
             return result;
         }
+
         public static BigInteger Factorial(this BigInteger number)
         {
             BigInteger result = 1;
@@ -238,6 +258,7 @@ namespace Common.AdvancedMath
 
             return true;
         }
+
         public static bool IsPandigital(this int number)
         {
             string numberAsString = number.ToString();
@@ -251,6 +272,7 @@ namespace Common.AdvancedMath
 
             return true;
         }
+
         public static bool IsPandigital(this BigInteger number)
         {
             string numberAsString = number.ToString();
