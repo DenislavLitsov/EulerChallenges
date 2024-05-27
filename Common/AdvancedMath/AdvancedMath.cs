@@ -11,9 +11,9 @@ namespace Common.AdvancedMath
             if (number == 2) return true;
             if (number % 2 == 0) return false;
 
-            var boundary = (int)(Math.Sqrt(number));
+            var boundary = (long)(Math.Sqrt(number));
 
-            for (int i = 3; i <= boundary; i += 2)
+            for (long i = 3; i <= boundary; i += 2)
                 if (number % i == 0)
                     return false;
 
@@ -42,16 +42,21 @@ namespace Common.AdvancedMath
             res.Add(1);
 
             //            +1 is needed!!
-            long max = (long)Math.Sqrt(number) + (long)1;
-            bool isNotPrime = max * max != number;
+            long max = (long)Math.Sqrt(number) + 1;
+            long skipNumber = (max - 1) * (max - 1) == number ? max - 1 : -1;
             for (long i = 2; i < max; i++)
             {
-                if (number % i == 0 && isNotPrime)
+                if (number % i == 0)
                 {
                     res.Add(i);
-                    if (isNotPrime)
+                    if (i != skipNumber)
                     {
                         long temp = number / i;
+                        if (number % temp != 0)
+                        {
+                            throw new Exception("wtf");
+                        }
+
                         res.Add(temp);
                     }
                 }
@@ -68,15 +73,20 @@ namespace Common.AdvancedMath
 
             //            +1 is needed!!
             int max = (int)Math.Sqrt(number) + 1;
-            bool isNotPrime = max * max != number;
+            int skipNumber = (max - 1) * (max - 1) == number ? max - 1 : -1;
             for (int i = 2; i < max; i++)
             {
-                if (number % i == 0 && isNotPrime)
+                if (number % i == 0)
                 {
                     res.Add(i);
-                    if (isNotPrime)
+                    if (i != skipNumber)
                     {
                         int temp = number / i;
+                        if (number % temp != 0)
+                        {
+                            throw new Exception("wtf");
+                        }
+
                         res.Add(temp);
                     }
                 }

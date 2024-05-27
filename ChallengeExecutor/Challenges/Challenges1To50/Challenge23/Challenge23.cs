@@ -93,7 +93,8 @@ namespace ChallengeExecutor.Challenges.Challenges1To50.Challenge23
 
         private NumberType GetNumberType(long number)
         {
-            long divisorSum = number.GetAllDivisorsExcludingSameNumber().Sum();
+            var divisors = number.GetAllDivisorsExcludingSameNumber();
+            long divisorSum = divisors.Sum();
             if (divisorSum == number)
             {
                 return NumberType.Perfect;
