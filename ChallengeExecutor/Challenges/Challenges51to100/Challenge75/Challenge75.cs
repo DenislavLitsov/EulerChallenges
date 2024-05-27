@@ -8,65 +8,48 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge75
     {
         protected override int SolveImplementation()
         {
-            int answer = 0;
+            const int maxRopeLength = 1500000;
+            Dictionary<int, RightTrianglesWrapper> triangles = new Dictionary<int, RightTrianglesWrapper>();
 
-            int count = 0;
-            for (int i = 3; i < 1500000; i += 2)
+            for (int c = 1; c < maxRopeLength; c++)
             {
-                if (i.IsPrime())
+                Console.WriteLine(c);
+                int maxA = maxRopeLength - c - 1;
+                for (int a = 1; a < maxRopeLength; a++)
                 {
-                    count++;
-                }
-            }
+                    if (a + c > maxRopeLength)
+                        break;
 
-            Console.WriteLine(count);
-
-            for (int p = 12; p <= 1500; p += 2)
-            {
-                if (p % 100 == 0)
-                {
-                    Console.WriteLine(p);
-                }
-
-                int currSolutions = 0;
-
-                int maxA = p / 2 - 2;
-                int printA = 0;
-                int printB = 0;
-                int printC = 0;
-
-                for (int a = 1; a <= maxA; a++)
-                {
-                    int maxB = (p - a) / 2;
-                    for (int b = a + 1; b <= maxB; b++)
+                    for (int b = 1; b < maxRopeLength; b++)
                     {
-                        int c = p - a - b;
+                        int currRopeLength = a + c + b;
+                        if (a + c + b > currRopeLength)
+                            break;
 
-                        //Triangle triangle = new Triangle(a, b, c);
-                        if (a * a + b * b == c * c)
+                        if (c*c != a*a + b*b)
+                            continue;
+
+                        var stringifiedTriangle =
+                            c.ToString() + (a > b ? a : b).ToString() + (a > b ? b : a).ToString();
+
+                        if (triangles.ContainsKey(currRopeLength))
                         {
-                            printA = a;
-                            printB = b;
-                            printC = c;
-                            currSolutions++;
-
-                            if (currSolutions > 1)
-                                break;
+                            var wrapper = triangles[currRopeLength];
+                            if (wrapper.RightTriangles.Any(x=>x == stringifiedTriangle) == false)
+                            {
+                                wrapper.RightTriangles.Add(stringifiedTriangle);
+                            }
+                        }
+                        else
+                        {
+                            triangles.Add(currRopeLength, new RightTrianglesWrapper(stringifiedTriangle));
                         }
                     }
-
-                    if (currSolutions > 1)
-                        break;
-                }
-
-                if (currSolutions == 1)
-                {
-                    Console.WriteLine($"Right angle P: {p}, A:{printA}, B:{printB}, C:{printC},  A to B = {printA / (decimal)printB}");
-                    answer++;
                 }
             }
 
-            return answer;
+            var count = triangles.Count(x => x.Value.RightTriangles.Count == 1);
+            return count;
         }
     }
 }
