@@ -8,7 +8,17 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge64
     {
         protected override int SolveImplementation()
         {
-            throw new NotImplementedException();
+            const int maxPeriod = 10000;
+            PeriodicSqareRootChainGenerator periodicSqareRootChainGenerator = new PeriodicSqareRootChainGenerator(23);
+
+            periodicSqareRootChainGenerator.GenerateAmount(maxPeriod);
+
+            var chain = new string(periodicSqareRootChainGenerator.Chain
+                .Select(x => ((int)x).ToString()[0])
+                .ToArray());
+
+
+            return 1;
         }
     }
 }
