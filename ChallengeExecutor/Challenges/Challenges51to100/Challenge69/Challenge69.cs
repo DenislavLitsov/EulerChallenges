@@ -14,7 +14,9 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge69
 
             for (int i = 2; i <= Constants.OneMilion; i++)
             {
-                var divisors = this.GetAllDivisorsExcept1(i);
+                var divisors = i.GetAllDivisorsExcludingSameNumber()
+                    .Skip(1)
+                    .ToList();
                 this.allDivisors.Add(i, divisors);
             }
         }
@@ -24,38 +26,37 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge69
             int bestNumber = 0;
             double bestRatio = 0;
 
-            for (int i = 2; i <= Constants.OneMilion; i++)
-            {
-                //var relativePrimes = i.GetAllRelativePrimes();
-                //var count = relativePrimes.Count();
-                //
-                //double ratio = (double)(i) / (double)(count);
-                //if (ratio > bestRatio)
-                //{
-                //    bestRatio = ratio;
-                //    bestNumber = i;
-                //
-                //    Console.WriteLine($"Best ratio: {bestRatio}; Best number: {bestNumber}");
-                //}
-            }
+            List<int> bestRelativePrimes;
 
-            return bestNumber;
-        }
-
-        private IEnumerable<int> GetAllDivisorsExcept1(int number)
-        {
-            List<int> res = new List<int>();
-            int length = (number / 2) + 1;
-            for (int i = 2; i < length; i++)
+            for (int n = 2; n <= Constants.OneMilion; n++)
             {
-                if (number % i == 0)
+                var nDivisors = this.allDivisors[n];
+                List<int> relativePrimes = new List<int>(n / 2)
                 {
-                    res.Add(i);
+                    1,
+                };
+
+                for (int i = 2; i < n; i++)
+                {
+                    var iDivisors = this.allDivisors[i];
+                    bool areRelativePrimes = (nDivisors.Contains(i) == false && nDivisors.Any(x => iDivisors.Contains(x)) == false);
+                    if (areRelativePrimes)
+                    {
+                        relativePrimes.Add(i);
+                    }
+                }
+
+                int fN = relativePrimes.Count;
+                double max = (double)n / (double)fN;
+                if (max > bestRatio)
+                {
+                    bestNumber = n;
+                    bestRatio = max;
+                    bestRelativePrimes = relativePrimes;
                 }
             }
 
-            res.Add(number);
-            return res;
+            return bestNumber;
         }
     }
 }

@@ -11,14 +11,18 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge64
             const int maxPeriod = 10000;
             PeriodicSqareRootChainGenerator periodicSqareRootChainGenerator = new PeriodicSqareRootChainGenerator(23);
 
-            periodicSqareRootChainGenerator.GenerateAmount(maxPeriod);
+            periodicSqareRootChainGenerator.GenerateAmount(10000);
+
 
             var chain = new string(periodicSqareRootChainGenerator.Chain
                 .Select(x => ((int)x).ToString()[0])
                 .ToArray());
 
+            Console.WriteLine();
+            Console.WriteLine(chain);
+            Console.WriteLine();
 
-            return 1;
+            return -1;
         }
     }
 }

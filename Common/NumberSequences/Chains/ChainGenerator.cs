@@ -1,4 +1,6 @@
-﻿namespace Common.NumberSequences.Chains
+﻿using System.Text;
+
+namespace Common.NumberSequences.Chains
 {
     public abstract class ChainGenerator<T>
     {
@@ -45,7 +47,7 @@
         }
 
         // Gets the distance from first repeating element to the last
-        public long GetPeriod()
+        public long GetPeriodLength()
         {
             var firstIndex = this._chain.IndexOf(this.RepeatingElement);
             var lastIndex = this._chain.LastIndexOf(this.RepeatingElement);
@@ -61,6 +63,17 @@
 
             var result = this._chain.Skip(firstIndex).ToList();
             return result;
+        }
+
+        public string GetPeriod()
+        {
+            StringBuilder sb = new StringBuilder();
+            this.GetPeriodEnumerable()
+                .ToList()
+                .ForEach(x => sb.Append(x));
+
+            var res = sb.ToString();
+            return res;
         }
 
         public T GetElementAtIndex(int index)

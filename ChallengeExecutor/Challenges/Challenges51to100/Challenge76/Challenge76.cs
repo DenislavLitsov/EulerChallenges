@@ -6,7 +6,7 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge76
 {
     public class Challenge76 : BaseChallenge<int>
     {
-        private Dictionary<int, IEnumerable<SumNumber>> CacheNumbers = new Dictionary<int, IEnumerable<SumNumber>>();
+        private Dictionary<int, IList<SumNumber>> CacheNumbers = new Dictionary<int, IList<SumNumber>>();
 
         protected override void Setup()
         {
@@ -14,12 +14,16 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge76
 
         protected override int SolveImplementation()
         {
-            this.CacheNumbers.Add(1, new List<SumNumber> { new SumNumber(new[] { 1 }) });
+            //this.CacheNumbers.Add(1, new List<SumNumber> { new SumNumber(new[] { 1 }) });
+            this.CacheNumbers.Add(2, new List<SumNumber> { new SumNumber(new[] { 1, 1 }) });
 
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= 100; i++)
             {
-                this.GetAllPossibleCombinations(i);
+                var comb = this.GetAllPossibleCombinations(i);
+                Console.WriteLine($"{i}: {comb.Count()}");
             }
+
+            return this.CacheNumbers[100].Count();
 
             var allSums = this.GetAllPossibleCombinations(40);
 
@@ -31,7 +35,7 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge76
             return allSums.Count();
         }
 
-        private IEnumerable<SumNumber> GetAllPossibleCombinations(int number)
+        private IList<SumNumber> GetAllPossibleCombinations(int number)
         {
             if (this.CacheNumbers.ContainsKey(number))
             {
@@ -39,20 +43,31 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge76
             }
 
             List<SumNumber> result = new List<SumNumber>();
+            HashSet<string> cachedItems = new HashSet<string>();
 
             int maxNumber = number / 2;
             for (int number1 = 1; number1 <= maxNumber; number1++)
             {
                 int number2 = number - number1;
-                result.Add(new SumNumber(new[] { number1, number2 }));
+                var addNew = new SumNumber(new[] { number1, number2 });
+                result.Add(addNew);
+                cachedItems.Add(addNew.CachedNumbers);
 
                 var inner = this.GetAllPossibleCombinations(number2);
-                foreach (var innerItem in inner)
+
+                for (int i = inner.Count - (1); i >= 0; i--)
                 {
+                    var innerItem = inner[i];
+                    if (number1 > innerItem.Numbers.First())
+                    {
+                        break;
+                    }
+
                     var newSum = SumNumber.CombineNumbers(number1, innerItem);
-                    if (this.Exists(result, newSum) == false)
+                    //if (this.Exists(cachedItems, newSum) == false)
                     {
                         result.Add(newSum);
+                        cachedItems.Add(newSum.CachedNumbers);
                     }
                 }
             }
@@ -65,33 +80,47 @@ namespace ChallengeExecutor.Challenges.Challenges51to100.Challenge76
             return result;
         }
 
-        private bool Exists(IEnumerable<SumNumber> sums, SumNumber newSum)
+        private bool Exists(HashSet<string> sums, SumNumber newSum)
         {
-            bool exists = false;
-            foreach (var sum in sums)
-            {
-                int count = newSum.Numbers.Count();
-                for (int i = 0; i < count; i++)
-                {
-                    int number1 = sum.Numbers.ElementAt(i);
-                    int number2 = newSum.Numbers.ElementAt(i);
+            return true;
+            //return sums.Contains(newSum.CachedNumbers);
 
-                    if (number1 != number2)
-                    {
-                        exists = false;
-                        break;
-                    }
-                    else
-                    {
-                        exists = true;
-                    }
-                }
+            //if (sums.Any(x=>x.CachedNumbers == newSum.CachedNumbers))
+            //{
+            //    return true;
+            //}
 
-                if (exists)
-                    return true;
-            }
-
-            return exists;
+            //return false;
+            //
+            //bool exists = false;
+            //foreach (var sum in sums)
+            //{
+            //    int count = newSum.Numbers.Count();
+            //    if (count != sum.Numbers.Count())
+            //    {
+            //        continue;
+            //    }
+            //    for (int i = 0; i < count; i++)
+            //    {
+            //        int number1 = sum.Numbers.ElementAt(i);
+            //        int number2 = newSum.Numbers.ElementAt(i);
+            //
+            //        if (number1 != number2)
+            //        {
+            //            exists = false;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            exists = true;
+            //        }
+            //    }
+            //
+            //    if (exists)
+            //        return true;
+            //}
+            //
+            //return exists;
         }
     }
 }

@@ -5,7 +5,7 @@
         private double _mainNumber;
         private CalculationType _calculationType;
         private IWrittenCalculation _writtenCalculation;
-
+        
         public WrittenCalculation(double mainNumber, CalculationType calculationType)
         {
             _mainNumber = mainNumber;
@@ -54,7 +54,6 @@
                 }
             }
 
-            Console.WriteLine($"Calcute: {this._mainNumber} with {innerNumberValue}: res: {res}, Type: {this._calculationType}");
             return res;
         }
 
