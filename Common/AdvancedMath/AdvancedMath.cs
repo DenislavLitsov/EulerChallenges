@@ -159,6 +159,31 @@ namespace Common.AdvancedMath
             return false;
         }
 
+        public static IEnumerable<int> GetAllFactors(this int initNumber)
+        {
+            var result = new List<int>();
+            if (initNumber <= 1)
+            {
+                return result;
+            }
+
+            int number = initNumber;
+
+            do
+            {
+                for (int i = 2; i <= number; i++)
+                {
+                    if (number % i == 0)
+                    {
+                        number /= i;
+                        result.Add(i);
+                    }   
+                }
+            } while (number > 1);
+
+            return result;
+        }
+        
         public static BigInteger BigPower(this long number, int power)
         {
             if (power == 0)

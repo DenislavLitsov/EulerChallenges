@@ -1,5 +1,6 @@
 ﻿using Common;
 using System.Numerics;
+using ChallengeExecutor.Challenges.Challenges101To150.Challenge124;
 using ChallengeExecutor.Challenges.Challenges1To50.Challenge23;
 using Common.NumberSequences.Spirals;
 using Common.NumberSequences;

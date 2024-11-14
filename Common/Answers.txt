@@ -74,3 +74,5 @@ Challenge 92: 8581146
 Challenge 95: 14316
 Challenge 97: 8739992577
 Challenge 99: 709
+
+Challenge 124: 21417
