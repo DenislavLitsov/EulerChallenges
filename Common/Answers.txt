@@ -77,3 +77,4 @@ Challenge 99: 709
 
 Challenge 123: 21035
 Challenge 124: 21417
+Challenge 145: 608720

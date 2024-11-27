@@ -2,6 +2,7 @@
 using System.Numerics;
 using ChallengeExecutor.Challenges.Challenges101To150.Challenge123;
 using ChallengeExecutor.Challenges.Challenges101To150.Challenge124;
+using ChallengeExecutor.Challenges.Challenges101To150.Challenge145;
 using ChallengeExecutor.Challenges.Challenges1To50.Challenge23;
 using Common.NumberSequences.Spirals;
 using Common.NumberSequences;
@@ -24,7 +25,7 @@ namespace ChallengeExecutor
     {
         static void Main(string[] args)
         {
-            var challenge = new Challenge123();
+            var challenge = new Challenge145();
             challenge.Solve();
         }
     }
