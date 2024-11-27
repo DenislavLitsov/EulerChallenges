@@ -1,3 +1,4 @@
+using ChallengeExecutor.Challenges.Challenges101To150.Challenge123;
 using ChallengeExecutor.Challenges.Challenges101To150.Challenge124;
 
 namespace Testing
@@ -951,7 +952,15 @@ namespace Testing
             //Assert.That(challenge.Solve(), Is.EqualTo(709));
             //  Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
         }
-        
+
+        [Test]
+        public void Test123()
+        {
+            var challenge = new Challenge123();
+            Assert.That(challenge.Solve(), Is.EqualTo(21035));
+            Assert.That(challenge.GetElapsedMiliseconds, Is.LessThanOrEqualTo(Max_Miliseconds_Per_Challenge));
+        }
+
         [Test]
         public void Test124()
         {

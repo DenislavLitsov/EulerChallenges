@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using System.Numerics;
 
 namespace Common.AdvancedMath
@@ -16,6 +17,19 @@ namespace Common.AdvancedMath
             for (long i = 3; i <= boundary; i += 2)
                 if (number % i == 0)
                     return false;
+
+            return true;
+        }
+        
+        public static bool IsPrime(this long number, IEnumerable<long> smallerPrimes)
+        {
+            foreach (var smallerPrime in smallerPrimes)
+            {
+                if (number % smallerPrime == 0)
+                {
+                    return false;
+                }
+            }
 
             return true;
         }
@@ -177,6 +191,7 @@ namespace Common.AdvancedMath
                     {
                         number /= i;
                         result.Add(i);
+                        i = 2;
                     }   
                 }
             } while (number > 1);
@@ -184,7 +199,7 @@ namespace Common.AdvancedMath
             return result;
         }
         
-        public static BigInteger BigPower(this long number, int power)
+        public static BigInteger BigPower(this long number, int power, IEnumerable<long> prevPrimes = null)
         {
             if (power == 0)
             {
@@ -196,10 +211,68 @@ namespace Common.AdvancedMath
                 throw new NotImplementedException();
             }
 
-            BigInteger result = number;
-            for (int i = 0; i < power - 1; i++)
+            bool isPowerPrime = false;
+
+            if (prevPrimes != null)
             {
-                result *= number;
+                isPowerPrime = prevPrimes.Any(x => x == power);
+            }
+            else
+            {
+                isPowerPrime = power.IsPrime();
+            }
+
+            BigInteger initValue = number;
+            BigInteger castedNumber = number;
+            if (isPowerPrime)
+            {
+                return BigInteger.Pow(castedNumber, power);
+            }
+
+            var factors = power.GetAllFactors()
+                .ToList();
+
+            var distinctFactors = factors
+                .Distinct()
+                .ToList();
+
+            var calculatedFactorValues = new Dictionary<int, BigInteger>();
+            for (int i = 0; i < distinctFactors.Count; i++)
+            {
+                int lastFactor = 1;
+                BigInteger lastValue = new BigInteger(number);
+
+                if (i != 0)
+                {
+                    lastFactor = distinctFactors[i - 1];
+                    lastValue = calculatedFactorValues[lastFactor];
+                }
+
+                int timesToUp = distinctFactors[i] - lastFactor;
+                BigInteger secondPower = BigInteger.Pow(initValue, timesToUp);
+
+                lastValue*= secondPower;
+                //for (int x = 0; x < timesToUp; x++)
+                //{
+                //    lastValue *= initValue;
+                //}
+
+                calculatedFactorValues.Add(distinctFactors[i], lastValue);
+            }
+
+            BigInteger result = 1;
+
+            foreach (var factor in factors)
+            {
+                result *= calculatedFactorValues[factor];
+            }
+
+            int totalSum = factors.Sum();
+            int extraFix = power - totalSum;
+            if (extraFix > 0)
+            {
+                BigInteger fixPower = BigInteger.Pow(initValue, extraFix);
+                result *= fixPower;
             }
 
             return result;
