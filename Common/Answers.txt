@@ -69,6 +69,7 @@ Challenge 74: 402
 Challenge 81: 427337
 Challenge 82: 260324
 Challenge 83: 425185
+Challenge 85: 2772
 Challenge 89: 743
 Challenge 92: 8581146
 Challenge 95: 14316
